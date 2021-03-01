@@ -1,0 +1,19 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-button class="right" fill="clear">Skip</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list-header class="title">What is your travel style?</ion-list-header>
+  <span class="content" *ngFor="let item of travelStyles">
+    <ion-chip outline [color]="item.color">
+      <ion-icon *ngIf="item.preIcon" [name]="item.preIcon"></ion-icon>
+      <ion-label>{{item.label}}</ion-label>
+      <ion-icon *ngIf="item.postIcon" [name]="item.postIcon"></ion-icon>
+    </ion-chip>
+  </span>
+  <div class="action">
+    <ion-button expand="block" color="primary">START</ion-button>
+  </div>
+</ion-content>
