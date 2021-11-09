@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="px-2">
+<ion-content class="ion-padding">
 
   <div class="signup-logo">
     <img src="assets/img/appicon.svg" alt="Ionic Logo">
@@ -55,5 +55,15 @@
       <ion-button (click)="onSignup(signupForm)" type="submit" expand="block">Create</ion-button>
     </div>
   </form>
+
+  <div class="social-media">
+    <h2>Or Create Your Account With</h2>
+    <ion-button (click)="onClick()">
+      <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+    </ion-button>
+    <ion-button (click)="onClick()">
+      <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+    </ion-button>
+  </div>
 
 </ion-content>
