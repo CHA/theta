@@ -16,7 +16,7 @@
   <h2> Create Your Theta Account</h2>
 
   <form #signupForm="ngForm" novalidate>
-    <ion-list lines="none">
+    <ion-list>
       <ion-item>
         <ion-label position="stacked" color="primary">E-Mail</ion-label>
         <ion-input [(ngModel)]="signup.email" name="email" type="email" #email="ngModel" required>
@@ -49,15 +49,26 @@
           Password is required
         </p>
       </ion-text>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Confirm Password</ion-label>
+        <ion-input [(ngModel)]="signup.confirmpassword" name="confirmpassword" type="password" #confirmpassword="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger">
+        <p [hidden]="confirmpassword.valid || submitted == false || password == confirmpassword" class="ion-padding-start">
+          Password doesn't match
+        </p>
+      </ion-text>
     </ion-list>
 
     <div class="ion-padding">
-      <ion-button (click)="onSignup(signupForm)" type="submit" expand="block">Create</ion-button>
+      <ion-button (click)="onSignup(signupForm)" type="submit" expand="block">Sign Up</ion-button>
     </div>
   </form>
 
   <div class="social-media">
-    <h2>Or Create Your Account With</h2>
+    <h3>Or Create Your Account With</h3>
     <ion-button (click)="onClick()">
       <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
     </ion-button>
