@@ -17,14 +17,4 @@ import { SignupPageRoutingModule } from './signup-routing.module';
     SignupPage,
   ]
 })
-export class SignUpModule { 
-
-  showPassword = false;
-  
-  togglePasswordText() {
-    console.log('togglePasswordText: ', this.showPassword);
-
-    this.showPassword = !this.showPassword;
-  }
-
-}
+export class SignUpModule {}

@@ -16,11 +16,19 @@ import { UserOptions } from '../../interfaces/user-options';
 export class SignupPage {
   signup: UserOptions = { username: '', password: '' };
   submitted = false;
+  passwordType:  String = 'password';
+  passwordIcon: String = 'eye';
+
 
   constructor(
     public router: Router,
     public userData: UserData
   ) {}
+  
+  togglePasswordText() {
+    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
+    this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+  }
 
   onSignup(form: NgForm) {
     this.submitted = true;
