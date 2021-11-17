@@ -20,9 +20,7 @@
     <form #signupForm="ngForm" novalidate>
       <ion-list>
         <ion-item>
-          <ion-label 
-            position="stacked" color="primary">E-Mail</ion-label>
-          <ion-input [(ngModel)]="signup.email" name="email" type="email" #email="ngModel" required>
+          <ion-input placeholder="E-Mail" [(ngModel)]="signup.email" name="email" type="email" #email="ngModel" required>
           </ion-input>
         </ion-item>
         <ion-text color="danger">
@@ -32,8 +30,7 @@
         </ion-text>
 
         <ion-item>
-          <ion-label position="stacked" color="primary">Full Name</ion-label>
-          <ion-input [(ngModel)]="signup.name" name="name" type="text" #name="ngModel" required>
+          <ion-input placeholder="Full Name" [(ngModel)]="signup.name" name="name" type="text" #name="ngModel" required>
           </ion-input>
         </ion-item>
         <ion-text color="danger">
