@@ -1,0 +1,30 @@
+[
+  {
+    "icon": "leaf",
+    "title": "Nature"
+  },
+  {
+    "icon": "fast-food",
+    "title": "Culinary"
+  },
+  {
+    "icon": "diamond",
+    "title": "Hidden Gems"
+  },
+  {
+    "icon": "man",
+    "title": "Solo Traveling"
+  },
+  {
+    "icon": "flash",
+    "title": "Spontaneous"
+  },
+  {
+    "icon": "business",
+    "title": "Night Life"
+  },
+  {
+    "icon": "trail-sign",
+    "title": "Iconic Sites"
+  }
+]

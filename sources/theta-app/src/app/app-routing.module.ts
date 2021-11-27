@@ -32,6 +32,10 @@ const routes: Routes = [
     path: 'tutorial',
     loadChildren: () => import('./pages/tutorial/tutorial.module').then(m => m.TutorialModule),
     canLoad: [CheckTutorial]
+  },
+  {
+    path: 'travel/styles',
+    loadChildren: () => import('./pages/travel-preferences/travel-preferences.module').then(m => m.TravelPreferencesModule)
   }
 ];
 
