@@ -12,7 +12,14 @@
   <ion-card class="container">
 
     <h2> My travel preferences</h2>
-    <p> Hello </p>    
+    <ion-chip color="primary" mode="ios" outline="true" *ngFor="let pref of preferences">
+      <ion-icon name={{pref.icon}}></ion-icon>
+      <ion-label>{{pref.title}}</ion-label>
+    </ion-chip>
+    
+    <ion-button (click)="onClick()" expand="block" shape="round">
+      Save
+    </ion-button>
   </ion-card>
 
 </ion-content>

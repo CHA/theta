@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import pref from 'assets/data/travel-preferences.json';
 
 @Component({
   selector: 'app-travel-preferences',
@@ -10,5 +11,7 @@ export class TravelPreferencesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
+
+  preferences = pref;
 
 }

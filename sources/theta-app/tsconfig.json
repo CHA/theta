@@ -19,6 +19,8 @@
       "@theta/*": [
         "app/*"
       ]
-    }
+    },
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   }
 }
