@@ -1,8 +1,10 @@
-![Theta] (assets/images/theta-logo.png)
+<p align="center">
+  <img src="https://github.com/CHA/theta/blob/develop/sources/theta-api/assets/images/theta-logo.png" height="200" />
+</p>
 
 ## Description
 
-[Under development] Theta API code repository.
+Theta API code repository.
 
 
 ## Installation
