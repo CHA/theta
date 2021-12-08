@@ -1,11 +1,13 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
-import { ItinerariesModule } from './features/itineraries/itineraries.module';
-import { UsersModule } from './features/users/users.module';
+import { AppConfigModule } from './config/app/app-config.module';
+import { ItinerariesModule } from './entities/itineraries/itineraries.module';
+import { UsersModule } from './entities/users/users.module';
 
 @Module({
   imports: [
+    AppConfigModule,
     ItinerariesModule,
     UsersModule,
     GraphQLModule.forRoot({

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/CHA/theta/blob/develop/sources/theta-api/assets/images/theta-logo.png" height="200" />
+  <img src="https://github.com/CHA/theta/blob/main/sources/theta-api/src/assets/images/theta-logo.png" height="200" />
 </p>
 
 ## Description
