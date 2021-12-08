@@ -1,29 +1,36 @@
 [
   {
+    "id": 1,
     "icon": "leaf",
     "title": "Nature"
   },
   {
+    "id": 2,
     "icon": "fast-food",
     "title": "Culinary"
   },
   {
+    "id": 3,
     "icon": "diamond-outline",
     "title": "Hidden Gems"
   },
   {
+    "id": 4,
     "icon": "man",
     "title": "Solo Traveling"
   },
   {
+    "id": 5,
     "icon": "flash",
     "title": "Spontaneous"
   },
   {
+    "id": 6,
     "icon": "business",
     "title": "Night Life"
   },
   {
+    "id": 7,
     "icon": "trail-sign",
     "title": "Iconic Sites"
   }
