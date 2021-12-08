@@ -4,6 +4,6 @@
 
 # Description
 There are three main folders
-- theta-api, this folder contains source code for Theta API
-- theta-app, this folder contains source code for Theta UI App
-- theta-site, this folder contains source code for Theta Website (static website for branding/marketing, not the actual app)
+- ```theta-api```, this folder contains source code for Theta API
+- ```theta-app```, this folder contains source code for Theta UI App
+- ```theta-site```, this folder contains source code for Theta Website (static website for branding/marketing, not the actual app)
