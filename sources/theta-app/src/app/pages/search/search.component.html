@@ -1,0 +1,11 @@
+<ion-toolbar>
+    <ion-segment value="Destination" color="primary" (ionChange)="onCriteriaChanged($event)">
+        <ion-segment-button value="Destination">
+            <ion-label>Destination</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Budget">
+            <ion-label>Budget</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</ion-toolbar>
+<ion-searchbar [placeholder]="searchPlaceholderText" debounce="500"></ion-searchbar>

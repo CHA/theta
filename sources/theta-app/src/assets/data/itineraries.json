@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "Weekend @ Canary Wharf",
+        "subTitle": "",
+        "city": {
+            "name": "London",
+            "country": "United Kingdom"
+        },
+        "price": {
+            "value": 300,
+            "currency": "GBP"
+        },
+        "currency": "IDR",
+        "description": "[Placeholder]",
+        "createdBy": "Christofel",
+        "createdDate": "20-May-2021 12:00",
+        "lastUpdatedDate": "20-May-2021 12:00",
+        "tags": [],
+        "userId": "hakimchr"
+    },
+    {
+        "id": 1,
+        "title": "Weekend @ Canary Wharf",
+        "subTitle": "",
+        "city": {
+            "name": "London",
+            "country": "United Kingdom"
+        },
+        "price": {
+            "value": 300,
+            "currency": "GBP"
+        },
+        "currency": "IDR",
+        "description": "[Placeholder]",
+        "createdBy": "Christofel",
+        "createdDate": "20-May-2021 12:00",
+        "lastUpdatedDate": "20-May-2021 12:00",
+        "tags": [],
+        "userId": "hakimchr"
+    }
+]

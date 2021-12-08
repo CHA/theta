@@ -1,7 +1,0 @@
-{
-  "name": "theta.app",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
