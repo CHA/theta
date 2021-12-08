@@ -1,3 +1,5 @@
+![Theta] (assets/images/theta-logo.png)
+
 ## Description
 
 [Under development] Theta API code repository.
