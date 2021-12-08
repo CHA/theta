@@ -1,4 +1,3 @@
-
 ## Description
 
 [Under development] Theta API code repository.
