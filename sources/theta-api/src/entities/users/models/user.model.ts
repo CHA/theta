@@ -1,5 +1,5 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
-import { Itinerary } from 'src/features/itineraries/models/itinerary.model';
+import { Itinerary } from 'src/entities/itineraries/models/itinerary.model';
 
 @ObjectType({ description: 'User model' })
 export class User {
