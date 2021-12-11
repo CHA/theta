@@ -27,9 +27,9 @@ type Itinerary {
 }
 
 type Query {
-  count: String!
+  getUser(id: String!): User!
   itinerary(id: String!): Itinerary!
-  user(id: String!): User!
+  userCount: String!
 }
 
 """User model"""

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Neo4jService } from 'src/config/database/neo4j/neo4j.service';
+import { Neo4jService } from '@theta/config/database/neo4j/neo4j.service';
 
 @Injectable()
 export class UserService {
@@ -22,10 +22,12 @@ export class UserService {
   }
 
   async count(): Promise<number> {
-    const result = await this.neo4jService.read(
-      'MATCH (n) WHERE n:User RETURN COUNT(n) AS count',
-      {},
-    );
+    const query = `
+      MATCH (n)
+      WHERE n:User
+      RETURN COUNT(n) AS count
+    `;
+    const result = await this.neo4jService.read(query, {});
     return +result?.records[0]?.get('count');
   }
 }

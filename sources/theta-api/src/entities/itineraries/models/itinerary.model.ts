@@ -1,5 +1,5 @@
 import { Field, GraphQLISODateTime, Int, ObjectType } from '@nestjs/graphql';
-import { User } from 'src/entities/users/models/user.model';
+import { User } from '@theta/entities/users/models/user.model';
 import { Activity } from './activity.model';
 
 @ObjectType({ description: 'Itinerary model' })

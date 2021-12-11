@@ -7,11 +7,11 @@ export class UsersResolver {
   constructor(private readonly userService: UserService) {}
 
   @Query((returns) => User)
-  async user(@Args('id') id: string) {
+  async getUser(@Args('id') id: string) {
     return await this.userService.findOneById(id);
   }
 
-  @Query((returns) => String)
+  @Query((returns) => String, { name: 'userCount' })
   async count(): Promise<number> {
     return await this.userService.count();
   }
