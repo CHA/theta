@@ -2,12 +2,12 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { AppConfigModule } from './config/app/app-config.module';
-import { Neo4jConfig } from './config/database/neo4j/neo4j-config.interface';
+import { Neo4jConfig } from './database/neo4j/neo4j-config.interface';
 import { Neo4jConfigModule } from './config/database/neo4j/neo4j-config.module';
 import { Neo4jConfigService } from './config/database/neo4j/neo4j-config.service';
-import { Neo4jModule } from './config/database/neo4j/neo4j.module';
 import { ItinerariesModule } from './entities/itineraries/itineraries.module';
 import { UsersModule } from './entities/users/users.module';
+import { Neo4jModule } from './database/neo4j/neo4j.module';
 
 @Module({
   imports: [

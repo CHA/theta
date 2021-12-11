@@ -26,10 +26,16 @@ type Itinerary {
   title: Float
 }
 
+type Mutation {
+  createUser(user: UserInput!): User!
+  deleteUser(id: String!): String!
+}
+
 type Query {
+  countUser: String!
   getUser(id: String!): User!
   itinerary(id: String!): Itinerary!
-  userCount: String!
+  searchUsers(keyword: String!): [User!]!
 }
 
 """User model"""
@@ -38,5 +44,11 @@ type User {
   firstName: String!
   id: Int!
   itineraries: [Itinerary!]
+  lastName: String
+}
+
+input UserInput {
+  email: String!
+  firstName: String!
   lastName: String
 }
