@@ -12,7 +12,7 @@ export class UsersResolver {
     return await this.userService.create(user);
   }
 
-  @Mutation(returns => String)
+  @Mutation((returns) => String)
   async deleteUser(@Args('id') id: string): Promise<string> {
     return await this.userService.delete(id);
   }

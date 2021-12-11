@@ -6,7 +6,7 @@ import { Neo4jConfigService } from './neo4j-config.service';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      load: [neo4jConfig]
+      load: [neo4jConfig],
     }),
   ],
   providers: [ConfigService, Neo4jConfigService],

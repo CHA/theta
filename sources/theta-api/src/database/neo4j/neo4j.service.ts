@@ -2,7 +2,7 @@ import neo4j, { Result, Driver, int, Transaction } from 'neo4j-driver';
 import { Injectable, Inject, OnApplicationShutdown } from '@nestjs/common';
 import { Neo4jConfig } from './neo4j-config.interface';
 import { NEO4J_CONFIG, NEO4J_DRIVER } from './neo4j.constants';
-import TransactionImpl from 'neo4j-driver-core/lib/transaction'
+import TransactionImpl from 'neo4j-driver-core/lib/transaction';
 
 @Injectable()
 export class Neo4jService implements OnApplicationShutdown {
