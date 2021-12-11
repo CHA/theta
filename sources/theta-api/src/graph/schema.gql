@@ -27,6 +27,7 @@ type Itinerary {
 }
 
 type Query {
+  count: String!
   itinerary(id: String!): Itinerary!
   user(id: String!): User!
 }

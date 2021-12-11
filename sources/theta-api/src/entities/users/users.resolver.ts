@@ -10,4 +10,9 @@ export class UsersResolver {
   async user(@Args('id') id: string) {
     return await this.userService.findOneById(id);
   }
+
+  @Query((returns) => String)
+  async count(): Promise<number> {
+    return await this.userService.count();
+  }
 }
