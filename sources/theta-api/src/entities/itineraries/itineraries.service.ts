@@ -10,14 +10,15 @@ export class ItinerariesService {
   async create(itinerary: ItineraryInput): Promise<ItineraryInput> {
     const transanction = this.db.beginTransaction();
 
+    itinerary.activities.forEach((e) => {
+      console.log(e.startTime);
+      console.log(e.endTime);
+    });
+
     const activity = `
       UNWIND $activites as activityRecord
       MERGE 
-        (activity:Activity {
-          name: activityRecord.name, 
-          startTime: datetime(activityRecord.startTime), 
-          endTime: datetime(activityRecord.endTime)}
-        )-[:${LOCATED_AT}]->
+        (activity:Activity {name: activityRecord.name})-[:${LOCATED_AT}]->
         (place:Place {name: activityRecord.place.name, address: activityRecord.place.address})
       MERGE (city:City {name: activityRecord.place.city.name})
       MERGE (itinerary:Itinerary {name: $itineraryName})
