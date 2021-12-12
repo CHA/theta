@@ -1,8 +1,9 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
-import { Itinerary } from 'src/entities/itineraries/models/itinerary.model';
+import { Itinerary } from '@theta/entities/itineraries/models/itinerary.model';
+import { BaseModel } from '@theta/entities/shared/models/base.input';
 
 @ObjectType({ description: 'User model' })
-export class User {
+export class User extends BaseModel {
   @Field((type) => Int)
   id: number;
 
@@ -17,4 +18,7 @@ export class User {
 
   @Field((type) => [Itinerary], { nullable: true })
   itineraries: Itinerary[];
+
+  @Field((type) => [User], { nullable: true })
+  followers: User[];
 }

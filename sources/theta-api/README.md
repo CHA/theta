@@ -9,8 +9,6 @@ Theta API code repository.
 
 ## Installation
 
-Please use ```develop``` branch
-
 ```bash
 git checkout develop
 ```
@@ -45,6 +43,13 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Connect to database
+1. Install no4j desktop https://neo4j.com/docs/operations-manual/current/installation/
+2. Connect using below details
+   - Add Remote Connection
+   - Connect URL: neo4j+s://7fc4a814.databases.neo4j.io
+   - username: neo4j
+   - password: 3xT32GUUyhJmv_FcJevLtiboSwuadm5NiRLzNjRZqjI 
 
 
 ## Support

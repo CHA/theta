@@ -1,23 +1,81 @@
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { Neo4jService } from '@theta/database/neo4j/neo4j.service';
+import { UserInput } from './models/user.input';
+import { User } from './models/user.model';
+
+@Injectable()
 export class UserService {
-  /**
-   * MOCK
-   * Put some real business logic here
-   * Left for demonstration purposes
-   */
+  constructor(private readonly db: Neo4jService) {}
 
-  async create(data: any) {
-    return {} as any;
+  async create(user: UserInput): Promise<UserInput> {
+    const query = `
+      MERGE(n:User {email: $email})
+      ON CREATE
+        SET
+          n.firstName = $firstName,
+          n.lastName = $lastName,
+          n.createdDate = datetime()
+      ON MATCH
+        SET
+          n.firstName = $firstName,
+          n.lastName = $lastName,
+          n.lastModifiedDate = datetime()
+      RETURN n
+    `;
+    await this.db.write(query, {
+      email: user.email,
+      firstName: user.firstName,
+      lastName: user.lastName,
+    });
+    return user;
   }
 
-  async findOneById(id: string) {
-    return {} as any;
+  async get(id: string): Promise<User> {
+    const query = `
+      MATCH(n:User {email: $id})
+      RETURN n AS user `;
+    const result = await this.db.read(query, { id });
+    if (result.records.length === 0) {
+      throw new NotFoundException();
+    }
+    return result?.records[0]?.get('user').properties;
   }
 
-  async findAll(recipesArgs: any) {
-    return [] as any;
+  async search(keyword: string): Promise<User[]> {
+    const query = `
+      MATCH(n:User)
+      WHERE n.email CONTAINS $keyword
+        OR n.firstName CONTAINS $keyword
+        OR n.lastName CONTAINS $keyword
+      RETURN n AS user`;
+    const result = await this.db.read(query, { keyword });
+    if (result.records.length === 0) {
+      throw new NotFoundException();
+    }
+    return result.records.map((x) => {
+      return x.get('user').properties;
+    });
   }
 
-  async remove(id: string) {
-    return true;
+  async delete(id: string) {
+    const query = `
+      MATCH(n:User {email: $id})
+      DETACH DELETE n
+      RETURN n AS user`;
+    const result = await this.db.write(query, { id });
+    if (result.records.length === 0) {
+      throw new NotFoundException();
+    }
+    return id;
+  }
+
+  async count(): Promise<number> {
+    const query = `
+      MATCH (n)
+      WHERE n:User
+      RETURN COUNT(n) AS count
+    `;
+    const result = await this.db.read(query, {});
+    return +result?.records[0]?.get('count');
   }
 }

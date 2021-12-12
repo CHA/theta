@@ -1,4 +1,5 @@
 import { Field, GraphQLISODateTime, ObjectType } from '@nestjs/graphql';
+import { Place } from '@theta/entities/places/models/place.model';
 
 @ObjectType({ description: 'Activity model' })
 export class Activity {
@@ -10,4 +11,10 @@ export class Activity {
 
   @Field((type) => GraphQLISODateTime, { nullable: true })
   endTime: Date;
+
+  @Field((type) => Place)
+  place: Place;
+
+  @Field((type) => [String], { nullable: true })
+  imageUrls: string[];
 }

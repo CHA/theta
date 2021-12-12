@@ -1,13 +1,13 @@
 import * as Joi from 'joi';
 import { Module } from '@nestjs/common';
-import configuration from './app-config';
+import appConfig from './app-config';
 import { AppConfigService } from './app-config.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      load: [configuration],
+      load: [appConfig],
       validationSchema: Joi.object({
         APP_NAME: Joi.string().default('Theta API'),
         APP_ENV: Joi.string()

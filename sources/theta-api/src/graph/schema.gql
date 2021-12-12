@@ -5,8 +5,28 @@
 """Activity model"""
 type Activity {
   endTime: DateTime
+  imageUrls: [String!]
   name: String!
+  place: Place!
   startTime: DateTime
+}
+
+input ActivityInput {
+  endTime: DateTime
+  imageUrl: [String!]
+  name: String!
+  place: PlaceInput!
+  startTime: DateTime
+}
+
+type City {
+  country: String!
+  name: String!
+}
+
+input CityInput {
+  country: String!
+  name: String!
 }
 
 """
@@ -17,25 +37,68 @@ scalar DateTime
 """Itinerary model"""
 type Itinerary {
   activities: [Activity!]!
-  createdBy: User
-  createdDate: DateTime
+  createdBy: String!
+  createdDate: DateTime!
   id: Int!
   lastModifiedBy: String
   lastModifiedDate: DateTime
+  name: String!
   score: Int
-  title: Float
+}
+
+input ItineraryInput {
+  activities: [ActivityInput!]
+  createdBy: String!
+  name: String!
+}
+
+type Mutation {
+  createItinerary(itinerary: ItineraryInput!): Itinerary!
+  createUser(user: UserInput!): User!
+  deleteUser(id: String!): String!
+  follows(userA: UserInput!, userB: UserInput!): [User!]!
+}
+
+type Place {
+  address: String
+  city: City!
+  name: String!
+  postCode: String
+  tags: [String!]
+}
+
+input PlaceInput {
+  address: String
+  city: CityInput!
+  name: String!
+  postCode: String
+  tags: [String!]
 }
 
 type Query {
-  itinerary(id: String!): Itinerary!
-  user(id: String!): User!
+  countUser: String!
+  getFollowers(user: UserInput!): [User!]!
+  getFollowing(user: UserInput!): [User!]!
+  getUser(id: String!): User!
+  searchUsers(keyword: String!): [User!]!
 }
 
 """User model"""
 type User {
+  createdBy: String!
+  createdDate: DateTime!
   email: String!
   firstName: String!
+  followers: [User!]
   id: Int!
   itineraries: [Itinerary!]
+  lastModifiedBy: String
+  lastModifiedDate: DateTime
+  lastName: String
+}
+
+input UserInput {
+  email: String!
+  firstName: String!
   lastName: String
 }
