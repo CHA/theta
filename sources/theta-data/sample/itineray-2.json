@@ -9,13 +9,11 @@
         "endTime": "2021-11-08T09:30:00Z",
         "place": {
           "name": "Pet Bunara",
-          "address": {
-            "address": "Stratico ul. 1",
-            "postCode": "23000",
-            "city": {
+          "address": "Stratico ul. 1",
+          "postCode": "23000",
+          "city": {
               "name": "Zadar",
               "country": "Croatia"
-            }
           },
           "tags": ["Restaurant"]
         }
@@ -26,13 +24,11 @@
         "endTime": "2021-11-08T10:30:00Z",
         "place": {
           "name": "Church of St Donatus",
-          "address": {
-            "address": "Grgura Mrganića",
-            "postCode": "23000",
-            "city": {
+          "address": "Grgura Mrganića",
+          "postCode": "23000",
+          "city": {
               "name": "Zadar",
               "country": "UK"
-            }
           },
           "tags": ["Point of Interest"]
         }
@@ -43,13 +39,11 @@
         "endTime": "2021-11-08T14:30:00Z",
         "place": {
           "name": "Proto Food&More",
-          "address": {
-            "address": "Stratico ul. 1",
-            "postCode": "23000",
-            "city": {
+          "address": "Stratico ul. 1",
+          "postCode": "23000",
+          "city": {
               "name": "Zadar",
               "country": "UK"
-            }
           },
           "tags": ["Restaurant"]
         }

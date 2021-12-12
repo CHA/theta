@@ -1,13 +1,19 @@
 import { Field, InputType } from '@nestjs/graphql';
-import { AddressInput } from './address.input';
+import { CityInput } from './city.input';
 
 @InputType()
 export class PlaceInput {
   @Field()
   name: string;
 
-  @Field((type) => AddressInput, { nullable: true })
-  address: AddressInput;
+  @Field((type) => String, { nullable: true })
+  address: string;
+
+  @Field((type) => String, { nullable: true })
+  postCode: string;
+
+  @Field((type) => CityInput)
+  city: CityInput;
 
   @Field((type) => [String], { nullable: true })
   tags: string[];

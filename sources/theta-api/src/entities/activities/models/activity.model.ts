@@ -14,4 +14,7 @@ export class Activity {
 
   @Field((type) => Place)
   place: Place;
+
+  @Field((type) => [String], { nullable: true })
+  imageUrls: string[];
 }

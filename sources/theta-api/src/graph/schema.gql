@@ -5,6 +5,7 @@
 """Activity model"""
 type Activity {
   endTime: DateTime
+  imageUrls: [String!]
   name: String!
   place: Place!
   startTime: DateTime
@@ -12,21 +13,10 @@ type Activity {
 
 input ActivityInput {
   endTime: DateTime
+  imageUrl: [String!]
   name: String!
   place: PlaceInput!
   startTime: DateTime
-}
-
-type Address {
-  address: String!
-  city: City!
-  postCode: String
-}
-
-input AddressInput {
-  address: String!
-  city: CityInput!
-  postCode: String
 }
 
 type City {
@@ -70,14 +60,18 @@ type Mutation {
 }
 
 type Place {
-  address: Address
+  address: String
+  city: City!
   name: String!
+  postCode: String
   tags: [String!]
 }
 
 input PlaceInput {
-  address: AddressInput
+  address: String
+  city: CityInput!
   name: String!
+  postCode: String
   tags: [String!]
 }
 
@@ -91,11 +85,15 @@ type Query {
 
 """User model"""
 type User {
+  createdBy: String!
+  createdDate: DateTime!
   email: String!
   firstName: String!
   followers: [User!]
   id: Int!
   itineraries: [Itinerary!]
+  lastModifiedBy: String
+  lastModifiedDate: DateTime
   lastName: String
 }
 

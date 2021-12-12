@@ -9,12 +9,19 @@ export class UserService {
 
   async create(user: UserInput): Promise<UserInput> {
     const query = `
-      CREATE(n:User
-        {
-          email: $email, 
-          firstName: $firstName, 
-          lastName: $lastName
-        })`;
+      MERGE(n:User {email: $email})
+      ON CREATE
+        SET
+          n.firstName = $firstName,
+          n.lastName = $lastName,
+          n.createdDate = datetime()
+      ON MATCH
+        SET
+          n.firstName = $firstName,
+          n.lastName = $lastName,
+          n.lastModifiedDate = datetime()
+      RETURN n
+    `;
     await this.db.write(query, {
       email: user.email,
       firstName: user.firstName,

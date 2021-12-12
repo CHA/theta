@@ -14,4 +14,7 @@ export class ActivityInput {
 
   @Field((type) => PlaceInput)
   place: PlaceInput;
+
+  @Field((type) => [String], { nullable: true })
+  imageUrl: string[];
 }

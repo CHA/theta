@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Neo4jService } from '@theta/database/neo4j/neo4j.service';
+import { LOCATED_AT } from '../relationship';
 import { ItineraryInput } from './models/itenerary.input';
 
 @Injectable()
@@ -11,9 +12,14 @@ export class ItinerariesService {
 
     const activity = `
       UNWIND $activites as activityRecord
-      MERGE (activity:Activity {name: activityRecord.name})
-      MERGE (place:Place {name: activityRecord.place.name})
-      MERGE (city:City {name: activityRecord.place.address.city.name})
+      MERGE 
+        (activity:Activity {
+          name: activityRecord.name, 
+          startTime: datetime(activityRecord.startTime), 
+          endTime: datetime(activityRecord.endTime)}
+        )-[:${LOCATED_AT}]->
+        (place:Place {name: activityRecord.place.name, address: activityRecord.place.address})
+      MERGE (city:City {name: activityRecord.place.city.name})
       MERGE (itinerary:Itinerary {name: $itineraryName})
       MERGE (user:User {email: $createdBy})
       MERGE (itinerary)-[:CREATED_BY]->(user)

@@ -9,13 +9,11 @@
         "endTime": "2021-12-01T19:00:00Z",
         "place": {
           "name": "Alchemist",
-          "address": {
-            "address": "Canary Wharf",
-            "postCode": "E1491B",
-            "city": {
+          "address": "Canary Wharf",
+          "postCode": "E1491B",
+          "city": {
               "name": "London",
               "country": "UK"
-            }
           },
           "tags": ["Restaurant"]
         }
@@ -26,14 +24,12 @@
         "endTime": "2021-12-01T19:00:00Z",
         "place": {
           "name": "Six by Nico",
-          "address": {
-            "address": "Canary Wharf",
-            "postCode": "E1491B",
-            "city": {
+          "address": "Canary Wharf",
+          "postCode": "E1491B",
+          "city": {
               "name": "London",
               "country": "UK"
-            }
-          },
+            },
           "tags": ["Restaurant"]
         }
       }
