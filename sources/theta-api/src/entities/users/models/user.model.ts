@@ -17,4 +17,7 @@ export class User {
 
   @Field((type) => [Itinerary], { nullable: true })
   itineraries: Itinerary[];
+
+  @Field((type) => [User], { nullable: true })
+  followers: User[];
 }

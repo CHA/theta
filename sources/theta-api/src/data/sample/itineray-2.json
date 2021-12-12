@@ -1,0 +1,59 @@
+{
+  "itinerary": {
+    "createdBy": "adi.mehanda@gmail.com",
+    "name": "My Croatia Trip",
+    "activities": [
+      {
+        "name": "Breakfast",
+        "startTime": "2021-11-08T08:30:00Z",
+        "endTime": "2021-11-08T09:30:00Z",
+        "place": {
+          "name": "Pet Bunara",
+          "address": {
+            "address": "Stratico ul. 1",
+            "postCode": "23000",
+            "city": {
+              "name": "Zadar",
+              "country": "Croatia"
+            }
+          },
+          "tags": ["Restaurant"]
+        }
+      },
+      {
+        "name": "Visit st Donat Church",
+        "startTime": "2021-11-08T10:00:00Z",
+        "endTime": "2021-11-08T10:30:00Z",
+        "place": {
+          "name": "Church of St Donatus",
+          "address": {
+            "address": "Grgura Mrganića",
+            "postCode": "23000",
+            "city": {
+              "name": "Zadar",
+              "country": "UK"
+            }
+          },
+          "tags": ["Point of Interest"]
+        }
+      },
+      {
+        "name": "Lunch",
+        "startTime": "2021-11-08T13:00:00Z",
+        "endTime": "2021-11-08T14:30:00Z",
+        "place": {
+          "name": "Proto Food&More",
+          "address": {
+            "address": "Stratico ul. 1",
+            "postCode": "23000",
+            "city": {
+              "name": "Zadar",
+              "country": "UK"
+            }
+          },
+          "tags": ["Restaurant"]
+        }
+      }
+    ]
+  }
+}

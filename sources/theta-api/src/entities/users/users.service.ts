@@ -5,7 +5,7 @@ import { User } from './models/user.model';
 
 @Injectable()
 export class UserService {
-  constructor(private readonly neo4jService: Neo4jService) {}
+  constructor(private readonly db: Neo4jService) {}
 
   async create(user: UserInput): Promise<UserInput> {
     const query = `
@@ -15,7 +15,7 @@ export class UserService {
           firstName: $firstName, 
           lastName: $lastName
         })`;
-    await this.neo4jService.write(query, {
+    await this.db.write(query, {
       email: user.email,
       firstName: user.firstName,
       lastName: user.lastName,
@@ -27,7 +27,7 @@ export class UserService {
     const query = `
       MATCH(n:User {email: $id})
       RETURN n AS user `;
-    const result = await this.neo4jService.read(query, { id });
+    const result = await this.db.read(query, { id });
     if (result.records.length === 0) {
       throw new NotFoundException();
     }
@@ -41,12 +41,11 @@ export class UserService {
         OR n.firstName CONTAINS $keyword
         OR n.lastName CONTAINS $keyword
       RETURN n AS user`;
-    const result = await this.neo4jService.read(query, { keyword });
+    const result = await this.db.read(query, { keyword });
     if (result.records.length === 0) {
       throw new NotFoundException();
     }
     return result.records.map((x) => {
-      console.log(x.get('user'));
       return x.get('user').properties;
     });
   }
@@ -54,9 +53,9 @@ export class UserService {
   async delete(id: string) {
     const query = `
       MATCH(n:User {email: $id})
-      DELETE n
+      DETACH DELETE n
       RETURN n AS user`;
-    const result = await this.neo4jService.write(query, { id });
+    const result = await this.db.write(query, { id });
     if (result.records.length === 0) {
       throw new NotFoundException();
     }
@@ -69,7 +68,7 @@ export class UserService {
       WHERE n:User
       RETURN COUNT(n) AS count
     `;
-    const result = await this.neo4jService.read(query, {});
+    const result = await this.db.read(query, {});
     return +result?.records[0]?.get('count');
   }
 }

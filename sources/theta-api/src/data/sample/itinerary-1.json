@@ -1,0 +1,42 @@
+{
+  "itinerary": {
+    "createdBy": "christofelh@gmail.com",
+    "name": "Weekend at Canary Wharf",
+    "activities": [
+      {
+        "name": "Brunch",
+        "startTime": "2021-12-01T19:00:00Z",
+        "endTime": "2021-12-01T19:00:00Z",
+        "place": {
+          "name": "Alchemist",
+          "address": {
+            "address": "Canary Wharf",
+            "postCode": "E1491B",
+            "city": {
+              "name": "London",
+              "country": "UK"
+            }
+          },
+          "tags": ["Restaurant"]
+        }
+      },
+      {
+        "name": "Dinner",
+        "startTime": "2021-12-01T19:00:00Z",
+        "endTime": "2021-12-01T19:00:00Z",
+        "place": {
+          "name": "Six by Nico",
+          "address": {
+            "address": "Canary Wharf",
+            "postCode": "E1491B",
+            "city": {
+              "name": "London",
+              "country": "UK"
+            }
+          },
+          "tags": ["Restaurant"]
+        }
+      }
+    ]
+  }
+}

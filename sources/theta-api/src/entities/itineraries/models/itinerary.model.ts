@@ -1,14 +1,13 @@
 import { Field, GraphQLISODateTime, Int, ObjectType } from '@nestjs/graphql';
-import { User } from '@theta/entities/users/models/user.model';
-import { Activity } from './activity.model';
+import { Activity } from '@theta/entities/activities/models/activity.model';
 
 @ObjectType({ description: 'Itinerary model' })
 export class Itinerary {
   @Field((type) => Int)
   id: number;
 
-  @Field({ nullable: true })
-  title: number;
+  @Field()
+  name: string;
 
   @Field((type) => Int, { nullable: true })
   score: number;
@@ -16,10 +15,10 @@ export class Itinerary {
   @Field((type) => [Activity])
   activities: Activity[];
 
-  @Field((type) => User, { nullable: true })
-  createdBy: User;
+  @Field()
+  createdBy: string;
 
-  @Field((type) => GraphQLISODateTime, { nullable: true })
+  @Field((type) => GraphQLISODateTime)
   createdDate: Date;
 
   @Field((type) => String, { nullable: true })
