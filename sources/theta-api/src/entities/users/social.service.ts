@@ -8,7 +8,7 @@ import { User } from './models/user.model';
 export class SocialService {
   constructor(private readonly db: Neo4jService) {}
 
-  async follow(userA: UserInput, userB: UserInput): Promise<User[]> {
+  async follows(userA: UserInput, userB: UserInput): Promise<User[]> {
     const followQuery = `
       MATCH
         (a:User { email: $emailA }),

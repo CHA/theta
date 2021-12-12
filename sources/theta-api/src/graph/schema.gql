@@ -66,7 +66,7 @@ type Mutation {
   createItinerary(itinerary: ItineraryInput!): Itinerary!
   createUser(user: UserInput!): User!
   deleteUser(id: String!): String!
-  follow(userA: UserInput!, userB: UserInput!): [User!]!
+  follows(userA: UserInput!, userB: UserInput!): [User!]!
 }
 
 type Place {

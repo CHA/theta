@@ -9,11 +9,11 @@ export class SocialResolver {
   constructor(private readonly sosialService: SocialService) {}
 
   @Mutation((returns) => [User])
-  async follow(
+  async follows(
     @Args('userA') userA: UserInput,
     @Args('userB') userB: UserInput,
   ): Promise<User[]> {
-    return await this.sosialService.follow(userA, userB);
+    return await this.sosialService.follows(userA, userB);
   }
 
   @Query((returns) => [User])
