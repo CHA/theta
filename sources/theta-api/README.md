@@ -10,10 +10,6 @@ Theta API code repository.
 ## Installation
 
 ```bash
-git checkout develop
-```
-
-```bash
 $ npm install
 ```
 
