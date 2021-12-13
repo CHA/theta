@@ -1,8 +1,9 @@
-import { UnauthorizedException } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { EncryptionService } from '@theta/encryption/encryption.service';
-import { User } from './models/user.model';
-import { UsersService } from './users.service';
+import { User } from '../models/user.model';
+import { UsersService } from '../users.service';
 
+@Injectable()
 export class AuthService {
   constructor(
     private readonly usersService: UsersService,
@@ -10,7 +11,7 @@ export class AuthService {
   ) {}
 
   async login(username: string, password: string): Promise<User> {
-    const user = this.validate(username, password);
+    const user = await this.validate(username, password);
     if (!user) {
       throw new UnauthorizedException();
     }

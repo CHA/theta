@@ -80,6 +80,7 @@ type Query {
   getFollowers(user: UserInput!): [User!]!
   getFollowing(user: UserInput!): [User!]!
   getUser(id: String!): User!
+  login(password: String!, username: String!): User!
   searchUsers(keyword: String!): [User!]!
 }
 

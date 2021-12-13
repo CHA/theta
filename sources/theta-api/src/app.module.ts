@@ -8,7 +8,6 @@ import { Neo4jConfigService } from './config/database/neo4j/neo4j-config.service
 import { ItinerariesModule } from './entities/itineraries/itineraries.module';
 import { UsersModule } from './entities/users/users.module';
 import { Neo4jModule } from './database/neo4j/neo4j.module';
-import { EncryptionModule } from './encryption/encryption.module';
 import { SharedModule } from './shared/shared.module';
 
 @Module({
