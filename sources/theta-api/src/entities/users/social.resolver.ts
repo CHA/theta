@@ -2,7 +2,7 @@ import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { UserInput } from './models/user.input';
 import { User } from './models/user.model';
 import { SocialService } from './social.service';
-import { UserService } from './users.service';
+import { UsersService } from './users.service';
 
 @Resolver((of) => User)
 export class SocialResolver {

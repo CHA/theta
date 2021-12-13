@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { Neo4jScheme } from '../../../database/neo4j/neo4j-config.interface';
+import { Neo4jScheme } from '@theta/database/neo4j/neo4j-config.interface';
 
 @Injectable()
 export class Neo4jConfigService {

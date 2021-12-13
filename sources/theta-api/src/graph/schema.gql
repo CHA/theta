@@ -95,10 +95,14 @@ type User {
   lastModifiedBy: String
   lastModifiedDate: DateTime
   lastName: String
+  password: String!
+  phoneNumber: String
 }
 
 input UserInput {
   email: String!
   firstName: String!
   lastName: String
+  password: String!
+  phoneNumber: String
 }

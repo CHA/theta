@@ -16,9 +16,15 @@ export class User extends BaseModel {
   @Field()
   email: string;
 
+  @Field((type) => String, { nullable: true })
+  phoneNumber: string;
+
   @Field((type) => [Itinerary], { nullable: true })
   itineraries: Itinerary[];
 
   @Field((type) => [User], { nullable: true })
   followers: User[];
+
+  @Field()
+  password: string;
 }
