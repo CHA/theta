@@ -1,16 +1,17 @@
-import { Field, GraphQLISODateTime, ObjectType } from '@nestjs/graphql';
+import { Field, GraphQLTimestamp, ObjectType } from '@nestjs/graphql';
+import { DateTime } from 'neo4j-driver';
 
 @ObjectType()
 export abstract class BaseModel {
   @Field()
   createdBy: string;
 
-  @Field((type) => GraphQLISODateTime)
+  @Field()
   createdDate: Date;
 
-  @Field((type) => String, { nullable: true })
+  @Field({ nullable: true })
   lastModifiedBy: string;
 
-  @Field((type) => GraphQLISODateTime, { nullable: true })
+  @Field({ nullable: true })
   lastModifiedDate: Date;
 }

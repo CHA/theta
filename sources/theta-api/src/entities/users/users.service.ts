@@ -11,7 +11,7 @@ export class UsersService {
     private readonly encryptionService: EncryptionService,
   ) {}
 
-  async create(user: UserInput): Promise<UserInput> {
+  async create(user: UserInput): Promise<User> {
     const password = await this.encryptionService.encrypt(user.password);
     const query = `
       MERGE(n:User {email: $email})
@@ -38,14 +38,14 @@ export class UsersService {
       password: password,
     });
     user.password = null;
-    return user;
+    return await this.get(user.email);
   }
 
-  async get(id: string): Promise<User> {
+  async get(username: string): Promise<User> {
     const query = `
-      MATCH(n:User {email: $id})
+      MATCH(n:User {email: $email})
       RETURN n AS user `;
-    const result = await this.db.read(query, { id });
+    const result = await this.db.read(query, { email: username });
     if (result.records.length === 0) {
       throw new NotFoundException();
     }

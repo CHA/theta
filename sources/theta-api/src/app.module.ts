@@ -9,6 +9,7 @@ import { ItinerariesModule } from './entities/itineraries/itineraries.module';
 import { UsersModule } from './entities/users/users.module';
 import { Neo4jModule } from './database/neo4j/neo4j.module';
 import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -29,8 +30,12 @@ import { SharedModule } from './shared/shared.module';
       playground: true,
       autoSchemaFile: join(process.cwd(), 'src/graph/schema.gql'),
       sortSchema: true,
+      buildSchemaOptions: {
+        dateScalarMode: 'timestamp',
+      },
     }),
     AppConfigModule,
+    AuthModule,
     ItinerariesModule,
     SharedModule,
     UsersModule,

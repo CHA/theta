@@ -16,7 +16,7 @@ export class User extends BaseModel {
   @Field()
   email: string;
 
-  @Field((type) => String, { nullable: true })
+  @Field({ nullable: true })
   phoneNumber: string;
 
   @Field((type) => [Itinerary], { nullable: true })

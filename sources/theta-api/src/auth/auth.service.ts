@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { EncryptionService } from '@theta/encryption/encryption.service';
-import { User } from '../models/user.model';
-import { UsersService } from '../users.service';
+import { User } from '@theta/entities/users/models/user.model';
+import { UsersService } from '@theta/entities/users/users.service';
 
 @Injectable()
 export class AuthService {
@@ -11,14 +11,15 @@ export class AuthService {
   ) {}
 
   async login(username: string, password: string): Promise<User> {
-    const user = await this.validate(username, password);
+    const user = await this.validateUser(username, password);
+    console.log(user);
     if (!user) {
       throw new UnauthorizedException();
     }
     return user;
   }
 
-  async validate(username: string, password: string): Promise<User> {
+  async validateUser(username: string, password: string): Promise<User> {
     const user = await this.usersService.get(username);
     const userPassword = await this.usersService.getPassword(username);
     const isPasswordMatch = await this.encryptionService.compare(

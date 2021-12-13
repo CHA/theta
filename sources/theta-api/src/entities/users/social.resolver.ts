@@ -1,5 +1,4 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { UserInput } from './models/user.input';
 import { User } from './models/user.model';
 import { SocialService } from './social.service';
 
@@ -9,19 +8,19 @@ export class SocialResolver {
 
   @Mutation((returns) => [User])
   async follows(
-    @Args('userA') userA: UserInput,
-    @Args('userB') userB: UserInput,
+    @Args('usernameA') usernameA: string,
+    @Args('usernameB') usernameB: string,
   ): Promise<User[]> {
-    return await this.sosialService.follows(userA, userB);
+    return await this.sosialService.follows(usernameA, usernameB);
   }
 
   @Query((returns) => [User])
-  async getFollowers(@Args('user') user: UserInput): Promise<User[]> {
-    return await this.sosialService.getFollowers(user);
+  async getFollowers(@Args('username') username: string): Promise<User[]> {
+    return await this.sosialService.getFollowers(username);
   }
 
   @Query((returns) => [User])
-  async getFollowing(@Args('user') user: UserInput): Promise<User[]> {
-    return await this.sosialService.getFollowing(user);
+  async getFollowing(@Args('username') username: string): Promise<User[]> {
+    return await this.sosialService.getFollowing(username);
   }
 }
