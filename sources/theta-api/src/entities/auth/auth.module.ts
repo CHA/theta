@@ -6,7 +6,7 @@ import { JwtConstants } from '@theta/shared/constants';
 import { SharedModule } from '@theta/shared/shared.module';
 import { AuthResolver } from './auth.resolver';
 import { AuthService } from './auth.service';
-import { GqlAuthGuard } from './gql-auth.guard';
+import { GqlAuthGuard } from '../../guards/gql-auth.guard';
 import { JwtStrategy } from './jwt.strategy';
 
 @Module({
