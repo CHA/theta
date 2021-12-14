@@ -1,7 +1,10 @@
+import { UseGuards } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { GqlAuthGuard } from '@theta/guards/gql-auth.guard';
 import { User } from './models/user.model';
 import { SocialService } from './social.service';
 
+@UseGuards(GqlAuthGuard)
 @Resolver((of) => User)
 export class SocialResolver {
   constructor(private readonly sosialService: SocialService) {}
