@@ -1,15 +1,16 @@
-import { Field, GraphQLISODateTime, ObjectType } from '@nestjs/graphql';
+import { Field, ObjectType } from '@nestjs/graphql';
 import { Place } from '@theta/entities/places/models/place.model';
+import { BaseModel } from '@theta/entities/shared/models/base.input';
 
 @ObjectType({ description: 'Activity model' })
-export class Activity {
+export class Activity extends BaseModel {
   @Field()
   name: string;
 
-  @Field((type) => GraphQLISODateTime, { nullable: true })
+  @Field({ nullable: true })
   startTime: Date;
 
-  @Field((type) => GraphQLISODateTime, { nullable: true })
+  @Field({ nullable: true })
   endTime: Date;
 
   @Field((type) => Place)

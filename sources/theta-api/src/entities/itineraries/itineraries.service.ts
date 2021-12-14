@@ -10,30 +10,30 @@ export class ItinerariesService {
   async create(itinerary: ItineraryInput): Promise<ItineraryInput> {
     const transanction = this.db.beginTransaction();
 
-    itinerary.activities.forEach((e) => {
-      console.log(e.startTime);
-      console.log(e.endTime);
-    });
-
     const activity = `
-      UNWIND $activites as activityRecord
+      UNWIND $itinerary.activities as a
       MERGE 
-        (activity:Activity {name: activityRecord.name})-[:${LOCATED_AT}]->
-        (place:Place {name: activityRecord.place.name, address: activityRecord.place.address})
-      MERGE (city:City {name: activityRecord.place.city.name})
-      MERGE (itinerary:Itinerary {name: $itineraryName})
-      MERGE (user:User {email: $createdBy})
+        (activity:Activity {
+          name: a.name
+        })-[:${LOCATED_AT}]->
+        (place:Place {name: a.place.name, address: a.place.address})
+      MERGE (city:City {name: a.place.city.name})
+      MERGE (country: Country{name: a.place.city.country})
+      MERGE (itinerary:Itinerary {
+        name: $itinerary.name,
+        createdBy: $itinerary.createdBy
+      })
+      MERGE (user:User {email: $itinerary.createdBy})
       MERGE (itinerary)-[:CREATED_BY]->(user)
       MERGE (itinerary)-[:CONTAINS]->(activity)
       MERGE (activity)-[:LOCATED_AT]->(place)
       MERGE (place)-[:IS_IN]->(city)
-      RETURN activityRecord
+      MERGE (city)-[:IS_IN]->(country)
+      RETURN activity
     `;
 
     await this.db.write(activity, {
-      itineraryName: itinerary.name,
-      createdBy: itinerary.createdBy,
-      activites: itinerary.activities,
+      itinerary: itinerary,
     });
 
     transanction.commit();

@@ -4,19 +4,23 @@
 
 """Activity model"""
 type Activity {
-  endTime: DateTime
+  createdBy: String!
+  createdDate: Date!
+  endTime: Date
   imageUrls: [String!]
+  lastModifiedBy: String
+  lastModifiedDate: Date
   name: String!
   place: Place!
-  startTime: DateTime
+  startTime: Date
 }
 
 input ActivityInput {
-  endTime: DateTime
+  endTime: Date
   imageUrl: [String!]
   name: String!
   place: PlaceInput!
-  startTime: DateTime
+  startTime: Date
 }
 
 type City {
@@ -32,19 +36,14 @@ input CityInput {
 """Date custom scalar type"""
 scalar Date
 
-"""
-A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
-"""
-scalar DateTime
-
 """Itinerary model"""
 type Itinerary {
   activities: [Activity!]!
   createdBy: String!
-  createdDate: DateTime!
+  createdDate: Date!
   id: Int!
   lastModifiedBy: String
-  lastModifiedDate: DateTime
+  lastModifiedDate: Date
   name: String!
   score: Int
 }

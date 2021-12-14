@@ -6,10 +6,10 @@ export class PlaceInput {
   @Field()
   name: string;
 
-  @Field((type) => String, { nullable: true })
+  @Field({ nullable: true })
   address: string;
 
-  @Field((type) => String, { nullable: true })
+  @Field({ nullable: true })
   postCode: string;
 
   @Field((type) => CityInput)
