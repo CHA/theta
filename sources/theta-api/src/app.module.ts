@@ -9,7 +9,7 @@ import { ItinerariesModule } from './entities/itineraries/itineraries.module';
 import { UsersModule } from './entities/users/users.module';
 import { Neo4jModule } from './database/neo4j/neo4j.module';
 import { SharedModule } from './shared/shared.module';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './entities/auth/auth.module';
 
 @Module({
   imports: [

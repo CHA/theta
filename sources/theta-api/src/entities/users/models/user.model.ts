@@ -4,8 +4,8 @@ import { BaseModel } from '@theta/entities/shared/models/base.input';
 
 @ObjectType({ description: 'User model' })
 export class User extends BaseModel {
-  @Field((type) => Int)
-  id: number;
+  @Field()
+  uid: string;
 
   @Field()
   firstName: string;
@@ -25,6 +25,5 @@ export class User extends BaseModel {
   @Field((type) => [User], { nullable: true })
   followers: User[];
 
-  @Field()
   password: string;
 }

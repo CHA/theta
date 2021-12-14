@@ -17,6 +17,7 @@ export class UsersService {
       MERGE(n:User {email: $email})
       ON CREATE
         SET
+          n.uid = apoc.create.uuid(),
           n.firstName = $firstName,
           n.lastName = $lastName,
           n.password = $password,
@@ -46,6 +47,17 @@ export class UsersService {
       MATCH(n:User {email: $email})
       RETURN n AS user `;
     const result = await this.db.read(query, { email: username });
+    if (result.records.length === 0) {
+      throw new NotFoundException();
+    }
+    return result?.records[0]?.get('user').properties;
+  }
+
+  async getByUid(uid: string): Promise<User> {
+    const query = `
+      MATCH(n:User {uid: $uid})
+      RETURN n AS user `;
+    const result = await this.db.read(query, { uid });
     if (result.records.length === 0) {
       throw new NotFoundException();
     }

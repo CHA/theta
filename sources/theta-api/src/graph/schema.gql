@@ -23,6 +23,11 @@ input ActivityInput {
   startTime: Date
 }
 
+input AuthLoginInput {
+  password: String!
+  username: String!
+}
+
 type City {
   country: String!
   name: String!
@@ -59,6 +64,7 @@ type Mutation {
   createUser(user: UserInput!): User!
   deleteUser(id: String!): String!
   follows(usernameA: String!, usernameB: String!): [User!]!
+  login(input: AuthLoginInput!): UserToken!
 }
 
 type Place {
@@ -82,7 +88,6 @@ type Query {
   getFollowers(username: String!): [User!]!
   getFollowing(username: String!): [User!]!
   getUser(id: String!): User!
-  login(password: String!, username: String!): User!
   searchUsers(keyword: String!): [User!]!
 }
 
@@ -93,13 +98,12 @@ type User {
   email: String!
   firstName: String!
   followers: [User!]
-  id: Int!
   itineraries: [Itinerary!]
   lastModifiedBy: String
   lastModifiedDate: Date
   lastName: String
-  password: String!
   phoneNumber: String
+  uid: String!
 }
 
 input UserInput {
@@ -108,4 +112,9 @@ input UserInput {
   lastName: String
   password: String!
   phoneNumber: String
+}
+
+type UserToken {
+  token: String!
+  user: User!
 }
