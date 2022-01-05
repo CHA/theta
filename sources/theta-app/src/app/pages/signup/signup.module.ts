@@ -17,4 +17,4 @@ import { SignupPageRoutingModule } from './signup-routing.module';
     SignupPage,
   ]
 })
-export class SignUpModule { }
+export class SignUpModule {}

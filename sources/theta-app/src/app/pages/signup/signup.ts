@@ -14,19 +14,27 @@ import { UserOptions } from '../../interfaces/user-options';
   styleUrls: ['./signup.scss'],
 })
 export class SignupPage {
-  signup: UserOptions = { username: '', password: '' };
+  signup: UserOptions = { email: '', name: '', password: '' };
   submitted = false;
+  passwordType:  String = 'password';
+  passwordIcon: String = 'eye';
+
 
   constructor(
     public router: Router,
     public userData: UserData
   ) {}
+  
+  togglePasswordText() {
+    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
+    this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+  }
 
   onSignup(form: NgForm) {
     this.submitted = true;
 
     if (form.valid) {
-      this.userData.signup(this.signup.username);
+      this.userData.signup(this.signup.name);
       this.router.navigateByUrl('/app/tabs/schedule');
     }
   }
