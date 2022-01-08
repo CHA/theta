@@ -1,3 +1,3 @@
 export class Jwt {
-  uid: string;
+  uuid: string;
 }

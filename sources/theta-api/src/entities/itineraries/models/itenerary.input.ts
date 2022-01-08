@@ -1,12 +1,13 @@
 import { Field, InputType } from '@nestjs/graphql';
 import { ActivityInput } from '@theta/entities/activities/models/activity.input';
+import { BaseInput } from '@theta/entities/shared/models/base.input';
 
 @InputType()
-export class ItineraryInput {
+export class ItineraryInput extends BaseInput {
   @Field()
   name: string;
 
-  @Field((type) => [ActivityInput], { nullable: true })
+  @Field(() => [ActivityInput], { nullable: true })
   activities: ActivityInput[];
 
   @Field()

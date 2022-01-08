@@ -13,6 +13,7 @@ type Activity {
   name: String!
   place: Place!
   startTime: Date
+  uuid: String!
 }
 
 input ActivityInput {
@@ -30,7 +31,12 @@ input AuthLoginInput {
 
 type City {
   country: String!
+  createdBy: String!
+  createdDate: Date!
+  lastModifiedBy: String
+  lastModifiedDate: Date
   name: String!
+  uuid: String!
 }
 
 input CityInput {
@@ -46,11 +52,11 @@ type Itinerary {
   activities: [Activity!]!
   createdBy: String!
   createdDate: Date!
-  id: Int!
   lastModifiedBy: String
   lastModifiedDate: Date
   name: String!
   score: Int
+  uuid: String!
 }
 
 input ItineraryInput {
@@ -70,9 +76,14 @@ type Mutation {
 type Place {
   address: String
   city: City!
+  createdBy: String!
+  createdDate: Date!
+  lastModifiedBy: String
+  lastModifiedDate: Date
   name: String!
   postCode: String
   tags: [String!]
+  uuid: String!
 }
 
 input PlaceInput {
@@ -88,7 +99,12 @@ type Query {
   getFollowers(username: String!): [User!]!
   getFollowing(username: String!): [User!]!
   getUser(id: String!): User!
+  searchItinerary(searchItineraryInput: SearchItineraryInput!): [Itinerary!]!
   searchUsers(keyword: String!): [User!]!
+}
+
+input SearchItineraryInput {
+  keyword: String!
 }
 
 """User model"""
@@ -103,7 +119,7 @@ type User {
   lastModifiedDate: Date
   lastName: String
   phoneNumber: String
-  uid: String!
+  uuid: String!
 }
 
 input UserInput {

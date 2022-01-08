@@ -1,12 +1,9 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { Itinerary } from '@theta/entities/itineraries/models/itinerary.model';
-import { BaseModel } from '@theta/entities/shared/models/base.input';
+import { BaseModel } from '@theta/entities/shared/models/base.model';
 
 @ObjectType({ description: 'User model' })
 export class User extends BaseModel {
-  @Field()
-  uid: string;
-
   @Field()
   firstName: string;
 

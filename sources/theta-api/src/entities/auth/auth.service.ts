@@ -28,21 +28,21 @@ export class AuthService {
     const validPassword = await this.validatePassword(input);
 
     if (!validPassword) {
-      throw new Error('Invalid password');
+      throw new UnauthorizedException('Invalid password');
     }
-    return { user: user, token: this.signToken(user.uid) };
+    return { user: user, token: this.signToken(user.uuid) };
   }
 
-  async validateUser(uid: string): Promise<User> {
-    const user = await this.usersService.getByUid(uid);
+  async validateUser(uuid: string): Promise<User> {
+    const user = await this.usersService.getByUid(uuid);
     if (!user) {
       throw new UnauthorizedException();
     }
     return user;
   }
 
-  private signToken(uid: string) {
-    const payLoad: Jwt = { uid };
+  private signToken(uuid: string) {
+    const payLoad: Jwt = { uuid };
     return this.jwtService.sign(payLoad);
   }
 

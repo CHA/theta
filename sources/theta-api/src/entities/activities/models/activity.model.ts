@@ -1,6 +1,6 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 import { Place } from '@theta/entities/places/models/place.model';
-import { BaseModel } from '@theta/entities/shared/models/base.input';
+import { BaseModel } from '@theta/entities/shared/models/base.model';
 
 @ObjectType({ description: 'Activity model' })
 export class Activity extends BaseModel {

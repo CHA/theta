@@ -5,6 +5,7 @@ import { AppConfigService } from './config/app/app-config.service';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const appConfig: AppConfigService = app.get(AppConfigService);
+  app.enableCors();
   await app.listen(appConfig.port);
   console.log(`${appConfig.name} is running under ${appConfig.url}`);
 }

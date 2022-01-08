@@ -4,6 +4,7 @@ import { GqlAuthGuard } from '@theta/guards/gql-auth.guard';
 import { ItinerariesService } from './itineraries.service';
 import { ItineraryInput } from './models/itenerary.input';
 import { Itinerary } from './models/itinerary.model';
+import { SearchItineraryInput } from './models/search-itinerary.input';
 
 @Resolver((of) => Itinerary)
 export class ItinerariesResolver {
@@ -13,5 +14,12 @@ export class ItinerariesResolver {
   @Mutation((returns) => Itinerary)
   async createItinerary(@Args('itinerary') itinerary: ItineraryInput) {
     return await this.itineraryService.create(itinerary);
+  }
+
+  @Query((returns) => [Itinerary])
+  async searchItinerary(
+    @Args('searchItineraryInput') searchItineraryInput: SearchItineraryInput,
+  ) {
+    return await this.itineraryService.search(searchItineraryInput);
   }
 }

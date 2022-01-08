@@ -5,7 +5,6 @@ import { UserInput } from './models/user.input';
 import { User } from './models/user.model';
 import { UsersService } from './users.service';
 
-@UseGuards(GqlAuthGuard)
 @Resolver((of) => User)
 export class UsersResolver {
   constructor(private readonly usersService: UsersService) {}
@@ -15,16 +14,19 @@ export class UsersResolver {
     return await this.usersService.create(user);
   }
 
+  @UseGuards(GqlAuthGuard)
   @Mutation((returns) => String)
   async deleteUser(@Args('id') id: string): Promise<string> {
     return await this.usersService.delete(id);
   }
 
+  @UseGuards(GqlAuthGuard)
   @Query((returns) => User)
   async getUser(@Args('id') id: string): Promise<User> {
     return await this.usersService.get(id);
   }
 
+  @UseGuards(GqlAuthGuard)
   @Query((returns) => [User])
   async searchUsers(@Args('keyword') keyword: string): Promise<User[]> {
     return await this.usersService.search(keyword);
