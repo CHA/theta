@@ -11,3 +11,14 @@
 .list {
   margin-bottom: 0;
 }
+
+@media screen and (min-width: 577px) {
+  .container {
+    padding: 5vh 15vw;
+    max-width: 75vw;
+  }  
+}
+
+.container {
+  padding: 5vh 8vw;
+}
