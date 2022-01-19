@@ -15,4 +15,5 @@ export interface Itinerary {
     pace: Pace;
     city: City;
     userId: string;
+    imageURLs: string[];
 }

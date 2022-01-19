@@ -17,10 +17,37 @@
         "createdDate": "20-May-2021 12:00",
         "lastUpdatedDate": "20-May-2021 12:00",
         "tags": [],
-        "userId": "hakimchr"
+        "userId": "hakimchr",
+        "imageURLs": [
+            "https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/travel/city-guides/london.jpg",
+            "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/93/6a/89.jpg"
+        ]
     },
     {
-        "id": 1,
+        "id": 2,
+        "title": "Visit Borobudur Temple",
+        "subTitle": "",
+        "city": {
+            "name": "DI Yogyakarta",
+            "country": "Indonesia"
+        },
+        "price": {
+            "value": 200000,
+            "currency": "IDR"
+        },
+        "currency": "IDR",
+        "description": "Visit Borobudur Temple, one of 7 Wonders of the World!",
+        "createdBy": "Adrian",
+        "createdDate": "29-May-2021 12:00",
+        "lastUpdatedDate": "29-May-2021 12:00",
+        "tags": [],
+        "userId": "adrianm",
+        "imageURLs": [
+            "https://upload.wikimedia.org/wikipedia/commons/7/77/Stupa_Borobudur.jpg"
+        ]
+    },
+    {
+        "id": 3,
         "title": "Weekend @ Canary Wharf",
         "subTitle": "",
         "city": {
@@ -37,6 +64,10 @@
         "createdDate": "20-May-2021 12:00",
         "lastUpdatedDate": "20-May-2021 12:00",
         "tags": [],
-        "userId": "hakimchr"
+        "userId": "hakimchr",
+        "imageURLs": [
+            "https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/travel/city-guides/london.jpg",
+            "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/93/6a/89.jpg"
+        ]
     }
 ]
