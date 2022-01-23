@@ -12,7 +12,7 @@
   <div class="login-logo">
     <img src="assets/img/appicon.svg" alt="Ionic logo">
   </div>
-  
+
   <ion-card class="container">
     <form #loginForm="ngForm" novalidate>
       <ion-list>
@@ -51,6 +51,18 @@
         </ion-col>
       </ion-row>
     </form>
+
+    <div class="social-media ion-margin-bottom">
+      <h3>Login using</h3>
+      <ion-button (click)="onClick()">
+        <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+      </ion-button>
+      <ion-button (click)="onClick()">
+        <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+      </ion-button>
+    </div>
+
+    <a href="/signup">No account yet? Click Here</a>
   </ion-card>
 
 </ion-content>
