@@ -14,24 +14,25 @@
   </div>
 
   <ion-card class="container">
+
+    <h2>Login</h2>
+
     <form #loginForm="ngForm" novalidate>
       <ion-list>
         <ion-item>
-          <ion-label position="stacked" color="primary">Username</ion-label>
-          <ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
+          <ion-input placeholder="Username / Email" [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
             required>
           </ion-input>
         </ion-item>
 
         <ion-text color="danger">
           <p [hidden]="username.valid || submitted == false" class="ion-padding-start">
-            Username is required
+            Username / Email is required
           </p>
         </ion-text>
 
         <ion-item>
-          <ion-label position="stacked" color="primary">Password</ion-label>
-          <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
+          <ion-input placeholder="Password" [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
           </ion-input>
         </ion-item>
 
@@ -61,8 +62,6 @@
         <ion-icon slot="icon-only" name="logo-google"></ion-icon>
       </ion-button>
     </div>
-
-    <a href="/signup">No account yet? Click Here</a>
   </ion-card>
 
 </ion-content>
