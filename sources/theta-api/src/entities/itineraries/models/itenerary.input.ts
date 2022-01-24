@@ -10,6 +10,9 @@ export class ItineraryInput extends BaseInput {
   @Field(() => [ActivityInput], { nullable: true })
   activities: ActivityInput[];
 
+  @Field(() => [String], { nullable: true })
+  imageUrls: string[];
+
   @Field()
   createdBy: string;
 }

@@ -7,9 +7,12 @@ export class Itinerary extends BaseModel {
   @Field()
   name: string;
 
-  @Field((type) => Int, { nullable: true })
+  @Field(() => Int, { nullable: true })
   score: number;
 
-  @Field((type) => [Activity])
+  @Field(() => [Activity])
   activities: Activity[];
+
+  @Field(() => [String], { nullable: true })
+  imageUrls: string[];
 }

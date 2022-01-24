@@ -52,6 +52,7 @@ type Itinerary {
   activities: [Activity!]!
   createdBy: String!
   createdDate: Date!
+  imageUrls: [String!]
   lastModifiedBy: String
   lastModifiedDate: Date
   name: String!
@@ -62,6 +63,7 @@ type Itinerary {
 input ItineraryInput {
   activities: [ActivityInput!]
   createdBy: String!
+  imageUrls: [String!]
   name: String!
 }
 
