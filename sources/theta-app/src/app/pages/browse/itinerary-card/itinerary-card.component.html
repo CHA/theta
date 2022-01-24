@@ -27,12 +27,12 @@
         <ion-slides pager="true">
             <ion-slide *ngFor="let image of itinerary.imageURLs">
                 <div>
-                    <img src="{{image}}"/>
+                    <img src="{{image}}" style="object-fit:cover; height: 250px;"/>
                 </div>
             </ion-slide>
         </ion-slides>
         <ion-item lines="none" class="card-item">
-            <p>
+            <p class="wrap-text">
                 {{itinerary.description}}
             </p>
         </ion-item>
