@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Weekend @ Canary Wharf",
-        "subTitle": "",
+        "subTitle": "3 days",
         "city": {
             "name": "London",
             "country": "United Kingdom"
@@ -12,7 +12,7 @@
             "currency": "GBP"
         },
         "currency": "IDR",
-        "description": "[Placeholder]",
+        "description": "Visit the London Eye!",
         "createdBy": "Christofel",
         "createdDate": "20-May-2021 12:00",
         "lastUpdatedDate": "20-May-2021 12:00",
@@ -48,14 +48,14 @@
     },
     {
         "id": 3,
-        "title": "Weekend @ Canary Wharf",
+        "title": "Historic Visit to Warwick Castle",
         "subTitle": "",
         "city": {
-            "name": "London",
+            "name": "Warwickshire",
             "country": "United Kingdom"
         },
         "price": {
-            "value": 300,
+            "value": 150,
             "currency": "GBP"
         },
         "currency": "IDR",
@@ -66,8 +66,30 @@
         "tags": [],
         "userId": "hakimchr",
         "imageURLs": [
-            "https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/travel/city-guides/london.jpg",
-            "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/93/6a/89.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/a/ae/Warwick_Castle_May_2016.jpg"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Scuba Diving at Raja Ampat",
+        "subTitle": "",
+        "city": {
+            "name": "West Papua",
+            "country": "Indonesia"
+        },
+        "price": {
+            "value": 20000000,
+            "currency": "IDR"
+        },
+        "currency": "IDR",
+        "description": "One of the best scuba diving spot in Indonesia!",
+        "createdBy": "Adrian",
+        "createdDate": "29-Dec-2021 12:00",
+        "lastUpdatedDate": "29-Dec-2021 12:00",
+        "tags": [],
+        "userId": "adrianm",
+        "imageURLs": [
+            "https://akcdn.detik.net.id/community/media/visual/2019/02/28/e27d496c-d76b-4415-8cc3-d1131c07215f_169.jpeg?w=780&q=90"
         ]
     }
 ]
