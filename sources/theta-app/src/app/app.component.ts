@@ -30,14 +30,9 @@ export class AppComponent implements OnInit {
       icon: 'calendar'
     },
     {
-      title: 'Map',
+      title: 'Near Me',
       url: '/app/tabs/map',
       icon: 'map'
-    },
-    {
-      title: 'About',
-      url: '/app/tabs/about',
-      icon: 'information-circle'
     }
   ];
   loggedIn = false;
