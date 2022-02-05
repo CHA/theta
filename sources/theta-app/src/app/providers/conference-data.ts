@@ -6,12 +6,12 @@ import { map } from 'rxjs/operators';
 import { UserData } from './user-data';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ConferenceData {
   data: any;
 
-  constructor(public http: HttpClient, public user: UserData) {}
+  constructor(public http: HttpClient, public user: UserData) { }
 
   load(): any {
     if (this.data) {
@@ -66,7 +66,9 @@ export class ConferenceData {
         day.shownSessions = 0;
 
         queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');
-        const queryWords = queryText.split(' ').filter(w => !!w.trim().length);
+        const queryWords = queryText
+          .split(' ')
+          .filter((w) => !!w.trim().length);
 
         day.groups.forEach((group: any) => {
           group.hide = true;

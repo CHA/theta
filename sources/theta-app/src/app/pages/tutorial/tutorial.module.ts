@@ -14,4 +14,4 @@ import { TutorialPageRoutingModule } from './tutorial-routing.module';
   declarations: [TutorialPage],
   entryComponents: [TutorialPage],
 })
-export class TutorialModule {}
+export class TutorialModule { }
