@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { UserData } from '../../providers/user-data';
 
-import { UserOptions } from '../../interfaces/user-options';
+import { UserOptions } from '../../models/user-options';
 
 
 
@@ -35,7 +35,7 @@ export class SignupPage {
 
     if (form.valid) {
       this.userData.signup(this.signup.name);
-      this.router.navigateByUrl('/app/tabs/schedule');
+      this.router.navigateByUrl('/app/tabs/browse');
     }
   }
 }

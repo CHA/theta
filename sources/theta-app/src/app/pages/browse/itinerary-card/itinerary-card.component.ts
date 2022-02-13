@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Itinerary } from '@theta/interfaces/itinerary';
+import { Itinerary } from '@theta/models/itinerary';
 
 @Component({
     selector: 'tta-itinerary-card',

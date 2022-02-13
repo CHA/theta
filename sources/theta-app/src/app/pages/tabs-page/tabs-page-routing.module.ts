@@ -1,29 +1,12 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { TabsPage } from "./tabs-page";
-import { SchedulePage } from "../schedule/schedule";
 
 const routes: Routes = [
   {
     path: "tabs",
     component: TabsPage,
     children: [
-      {
-        path: "schedule",
-        children: [
-          {
-            path: "",
-            component: SchedulePage,
-          },
-          {
-            path: "session/:sessionId",
-            loadChildren: () =>
-              import("../session-detail/session-detail.module").then(
-                (m) => m.SessionDetailModule
-              ),
-          },
-        ],
-      },
       {
         path: "browse",
         children: [
@@ -33,21 +16,11 @@ const routes: Routes = [
               import("../browse/browse.module").then((m) => m.BrowseModule),
           },
           {
-            path: "session/:sessionId",
+            path: "itineraries/:uuid",
             loadChildren: () =>
-              import("../session-detail/session-detail.module").then(
-                (m) => m.SessionDetailModule
+              import("../itinerary-details/itinerary-details.module").then(
+                (m) => m.ItineraryDetailsPageModule
               ),
-          },
-        ],
-      },
-      {
-        path: "map",
-        children: [
-          {
-            path: "",
-            loadChildren: () =>
-              import("../map/map.module").then((m) => m.MapModule),
           },
         ],
       },
@@ -64,4 +37,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

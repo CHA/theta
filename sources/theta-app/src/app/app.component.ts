@@ -23,16 +23,6 @@ export class AppComponent implements OnInit {
       title: 'Browse',
       url: '/app/tabs/browse',
       icon: 'search'
-    },
-    {
-      title: 'My Itineraries',
-      url: '/app/tabs/schedule',
-      icon: 'calendar'
-    },
-    {
-      title: 'Near Me',
-      url: '/app/tabs/map',
-      icon: 'map'
     }
   ];
   loggedIn = false;
@@ -112,13 +102,7 @@ export class AppComponent implements OnInit {
 
   logout() {
     this.userData.logout().then(() => {
-      return this.router.navigateByUrl('/app/tabs/schedule');
+      return this.router.navigateByUrl('/app/tabs/browse');
     });
-  }
-
-  openTutorial() {
-    this.menu.enable(false);
-    this.storage.set('ion_did_tutorial', false);
-    this.router.navigateByUrl('/tutorial');
   }
 }

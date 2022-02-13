@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { UserData } from '../../providers/user-data';
 
-import { UserOptions } from '../../interfaces/user-options';
+import { UserOptions } from '../../models/user-options';
 
 
 

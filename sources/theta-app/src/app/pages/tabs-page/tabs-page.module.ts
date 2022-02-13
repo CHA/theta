@@ -5,20 +5,16 @@ import { IonicModule } from '@ionic/angular';
 import { TabsPage } from './tabs-page';
 import { TabsPageRoutingModule } from './tabs-page-routing.module';
 
-import { MapModule } from '../map/map.module';
-import { ScheduleModule } from '../schedule/schedule.module';
-import { SessionDetailModule } from '../session-detail/session-detail.module';
 import { BrowseModule } from '../browse/browse.module';
+import { ItineraryDetailsPageModule } from '../itinerary-details/itinerary-details.module';
 
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
-    MapModule,
-    ScheduleModule,
-    SessionDetailModule,
     BrowseModule,
-    TabsPageRoutingModule
+    TabsPageRoutingModule,
+    ItineraryDetailsPageModule
   ],
   declarations: [
     TabsPage,

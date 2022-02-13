@@ -1,19 +1,17 @@
 import { Pace } from '@theta/enums/pace';
-import { City } from './location';
+import { BaseModel } from './base-model';
+import { City } from './city';
 import { Price } from './price';
 
-export interface Itinerary {
+export interface Itinerary extends BaseModel {
     id: number;
     title: string;
     subTitle: string;
-    price: Price;
+    city: City;
+    estimatedBudget: Price;
     description: string;
-    createdBy: string;
-    createdDate: Date;
-    lastUpdatedDate: Date;
     tags: string[];
     pace: Pace;
-    city: City;
     userId: string;
     imageURLs: string[];
 }

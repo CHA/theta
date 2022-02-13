@@ -1,31 +1,18 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { Router } from '@angular/router';
 import { TestBed, async } from '@angular/core/testing';
-import { ActionSheetController } from '@ionic/angular';
-
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { BrowseComponent } from './browse.component';
-import { ConferenceData } from '../../providers/conference-data';
-
-const confDataSub = {};
+import { ItineraryService } from '@theta/providers/itinerary.service';
 
 describe('BrowseComponent', () => {
   let fixture, app;
   beforeEach(async(() => {
-    const actionSheetSpy = jasmine.createSpyObj('ActionSheetController', [
-      'create'
-    ]);
-    const routerSpy = jasmine.createSpyObj('Router', ['navigateByUrl']);
-    const iabSpy = jasmine.createSpyObj('InAppBrowser', ['create']);
+    const itineraryServiceMock = jasmine.createSpy('ItineraryService');
 
     TestBed.configureTestingModule({
       declarations: [BrowseComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
-        { provide: ActionSheetController, useValue: actionSheetSpy },
-        { provide: InAppBrowser, useValue: iabSpy },
-        { provide: Router, useValue: routerSpy },
-        { provide: ConferenceData, useValue: confDataSub }
+        { provide: ItineraryService, useValue: itineraryServiceMock }
       ]
     }).compileComponents();
   }));

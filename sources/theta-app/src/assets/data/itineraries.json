@@ -1,189 +1,47 @@
 [
   {
-    "id": 1,
-    "title": "Weekend @ Canary Wharf",
-    "subTitle": "3 days",
+    "uuid": 1,
+    "createdBy": "Christofel",
+    "createdDate": "20-May-2021 12:00",
+    "lastModifedBy": null,
+    "lastModifiedDate": null,
+    "name": "Weekend @ Canary Wharf",
+    "score": null,
+    "activities": [
+      {
+        "name": "Dinner at Six by Nico",
+        "startTime": "20-May-2021 20:00",
+        "endTime": "20-May-2021 20:00",
+        "place": {
+          "name": "Six by Nico",
+          "address": "Chancellor Passage, London E14 5EA",
+          "postCode": "E14 5EA",
+          "city": {
+            "name": "London",
+            "country": "United Kingdom"
+          },
+          "tags": ["restaurant", "date night", "food"],
+          "imageUrls": [
+            "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-menu_10082021084839.jpg?w=928&h=522&fit=crop",
+            "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-opening-times_10082021084847.jpg?w=928&h=522&fit=crop"
+          ]
+        }
+      }
+    ],
     "city": {
       "name": "London",
       "country": "United Kingdom"
     },
-    "price": {
+    "estimatedBudget": {
       "value": 300,
       "currency": "GBP"
     },
-    "currency": "IDR",
     "description": "Over 300 shops, cafes, bars and restaurants, a year-round events programme, one of London's biggest roof gardens and an award-winning,",
-    "createdBy": "Christofel",
-    "createdDate": "20-May-2021 12:00",
-    "lastUpdatedDate": "20-May-2021 12:00",
     "tags": [],
     "userId": "hakimchr",
     "imageURLs": [
       "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/93/6a/89.jpg",
       "https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/travel/city-guides/london.jpg"
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Visit Borobudur Temple",
-    "subTitle": "",
-    "city": {
-      "name": "DI Yogyakarta",
-      "country": "Indonesia"
-    },
-    "price": {
-      "value": 200000,
-      "currency": "IDR"
-    },
-    "currency": "IDR",
-    "description": "Visit Borobudur Temple, one of 7 Wonders of the World!",
-    "createdBy": "Adrian",
-    "createdDate": "29-May-2021 12:00",
-    "lastUpdatedDate": "29-May-2021 12:00",
-    "tags": [],
-    "userId": "adrianm",
-    "imageURLs": [
-      "https://upload.wikimedia.org/wikipedia/commons/7/77/Stupa_Borobudur.jpg"
-    ]
-  },
-  {
-    "id": 3,
-    "title": "Historic Visit to Warwick Castle",
-    "subTitle": "",
-    "city": {
-      "name": "Warwickshire",
-      "country": "United Kingdom"
-    },
-    "price": {
-      "value": 150,
-      "currency": "GBP"
-    },
-    "currency": "IDR",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "createdBy": "Christofel",
-    "createdDate": "20-May-2021 12:00",
-    "lastUpdatedDate": "20-May-2021 12:00",
-    "tags": [],
-    "userId": "hakimchr",
-    "imageURLs": [
-      "https://upload.wikimedia.org/wikipedia/commons/a/ae/Warwick_Castle_May_2016.jpg"
-    ]
-  },
-  {
-    "id": 4,
-    "title": "Scuba Diving at Raja Ampat, 3D2N",
-    "subTitle": "",
-    "city": {
-      "name": "West Papua",
-      "country": "Indonesia"
-    },
-    "price": {
-      "value": 20000000,
-      "currency": "IDR"
-    },
-    "currency": "IDR",
-    "description": "One of the best scuba diving spot in Indonesia!",
-    "createdBy": "Adrian",
-    "createdDate": "29-Dec-2021 12:00",
-    "lastUpdatedDate": "29-Dec-2021 12:00",
-    "tags": [],
-    "userId": "adrianm",
-    "imageURLs": [
-      "https://akcdn.detik.net.id/community/media/visual/2019/02/28/e27d496c-d76b-4415-8cc3-d1131c07215f_169.jpeg?w=780&q=90"
-    ]
-  },
-  {
-    "id": 1,
-    "title": "Weekend @ Canary Wharf",
-    "subTitle": "3 days",
-    "city": {
-      "name": "London",
-      "country": "United Kingdom"
-    },
-    "price": {
-      "value": 300,
-      "currency": "GBP"
-    },
-    "currency": "IDR",
-    "description": "Over 300 shops, cafes, bars and restaurants, a year-round events programme, one of London's biggest roof gardens and an award-winning,",
-    "createdBy": "Christofel",
-    "createdDate": "20-May-2021 12:00",
-    "lastUpdatedDate": "20-May-2021 12:00",
-    "tags": [],
-    "userId": "hakimchr",
-    "imageURLs": [
-      "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/93/6a/89.jpg",
-      "https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/travel/city-guides/london.jpg"
-    ]
-  },
-  {
-    "id": 1,
-    "title": "Weekend @ Canary Wharf",
-    "subTitle": "3 days",
-    "city": {
-      "name": "London",
-      "country": "United Kingdom"
-    },
-    "price": {
-      "value": 300,
-      "currency": "GBP"
-    },
-    "currency": "IDR",
-    "description": "Over 300 shops, cafes, bars and restaurants, a year-round events programme, one of London's biggest roof gardens and an award-winning,",
-    "createdBy": "Christofel",
-    "createdDate": "20-May-2021 12:00",
-    "lastUpdatedDate": "20-May-2021 12:00",
-    "tags": [],
-    "userId": "hakimchr",
-    "imageURLs": [
-      "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/93/6a/89.jpg",
-      "https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/travel/city-guides/london.jpg"
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Visit Borobudur Temple",
-    "subTitle": "",
-    "city": {
-      "name": "DI Yogyakarta",
-      "country": "Indonesia"
-    },
-    "price": {
-      "value": 200000,
-      "currency": "IDR"
-    },
-    "currency": "IDR",
-    "description": "Visit Borobudur Temple, one of 7 Wonders of the World!",
-    "createdBy": "Adrian",
-    "createdDate": "29-May-2021 12:00",
-    "lastUpdatedDate": "29-May-2021 12:00",
-    "tags": [],
-    "userId": "adrianm",
-    "imageURLs": [
-      "https://upload.wikimedia.org/wikipedia/commons/7/77/Stupa_Borobudur.jpg"
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Visit Borobudur Temple",
-    "subTitle": "",
-    "city": {
-      "name": "DI Yogyakarta",
-      "country": "Indonesia"
-    },
-    "price": {
-      "value": 200000,
-      "currency": "IDR"
-    },
-    "currency": "IDR",
-    "description": "Visit Borobudur Temple, one of 7 Wonders of the World!",
-    "createdBy": "Adrian",
-    "createdDate": "29-May-2021 12:00",
-    "lastUpdatedDate": "29-May-2021 12:00",
-    "tags": [],
-    "userId": "adrianm",
-    "imageURLs": [
-      "https://upload.wikimedia.org/wikipedia/commons/7/77/Stupa_Borobudur.jpg"
     ]
   }
 ]

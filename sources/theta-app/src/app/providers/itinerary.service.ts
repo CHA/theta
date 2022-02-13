@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Itinerary } from '@theta/interfaces/itinerary';
-import { SearchCriteria } from '@theta/interfaces/search-criteria';
+import { Itinerary } from '@theta/models/itinerary';
+import { SearchCriteria } from '@theta/models/search-criteria';
 
 @Injectable({ providedIn: 'root' })
 export class ItineraryService {

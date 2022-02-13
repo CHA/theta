@@ -2,13 +2,13 @@
   <ion-card-header>
     <ion-item detail="false" lines="none" class="card-item">
       <ion-label>
-        <h2>
-          {{ itinerary.title }}
+        <h2 class="title">
+          {{ itinerary.name }}
         </h2>
-        <h2>
+        <h3 class="sub-title">
           {{ itinerary.city.name }}, {{ itinerary.city.country }} -
-          {{ itinerary.price.currency }} {{ itinerary.price.value }}
-        </h2>
+          {{ itinerary.estimatedBudget.currency }} {{ itinerary.estimatedBudget.value }}
+        </h3>
       </ion-label>
     </ion-item>
   </ion-card-header>

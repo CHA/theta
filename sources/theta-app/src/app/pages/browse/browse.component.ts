@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Itinerary } from '@theta/interfaces/itinerary';
+import { Itinerary } from '@theta/models/itinerary';
 import { ItineraryService } from '@theta/providers/itinerary.service';
 
 @Component({
