@@ -1,0 +1,6 @@
+<ion-slides pager="true">
+  <ion-slide *ngFor="let slide of slides">
+    <div class="container" [style.background-image]="'url(' + slide.imageUrl + ')'">
+    </div>
+  </ion-slide>
+</ion-slides>

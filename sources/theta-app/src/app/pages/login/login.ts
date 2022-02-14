@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { UserData } from '../../providers/user-data';
-
-import { UserOptions } from '../../models/user-options';
-
-
+import { User } from '@theta/models/user';
 
 @Component({
   selector: 'page-login',
@@ -14,7 +10,7 @@ import { UserOptions } from '../../models/user-options';
   styleUrls: ['./login.scss'],
 })
 export class LoginPage {
-  login: UserOptions = { email: '', password: '' };
+  user: User;
   submitted = false;
 
   constructor(
@@ -22,16 +18,11 @@ export class LoginPage {
     public router: Router
   ) { }
 
-  onLogin(form: NgForm) {
-    this.submitted = true;
+  login() {
 
-    if (form.valid) {
-      this.userData.login(this.login.email);
-      this.router.navigateByUrl('/app/tabs/schedule');
-    }
   }
 
-  onSignup() {
+  signup() {
     this.router.navigateByUrl('/signup');
   }
 }

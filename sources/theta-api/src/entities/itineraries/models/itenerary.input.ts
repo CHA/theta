@@ -15,4 +15,7 @@ export class ItineraryInput extends BaseInput {
 
   @Field()
   createdBy: string;
+
+  @Field(() => [String], { nullable: true })
+  description: string;
 }

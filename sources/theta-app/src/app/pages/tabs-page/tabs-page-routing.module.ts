@@ -1,33 +1,33 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { TabsPage } from "./tabs-page";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { TabsPage } from './tabs-page';
 
 const routes: Routes = [
   {
-    path: "tabs",
+    path: 'tabs',
     component: TabsPage,
     children: [
       {
-        path: "browse",
+        path: 'browse',
         children: [
           {
-            path: "",
+            path: '',
             loadChildren: () =>
-              import("../browse/browse.module").then((m) => m.BrowseModule),
-          },
-          {
-            path: "itineraries/:uuid",
-            loadChildren: () =>
-              import("../itinerary-details/itinerary-details.module").then(
-                (m) => m.ItineraryDetailsPageModule
-              ),
-          },
-        ],
+              import('../browse/browse.module').then((m) => m.BrowseModule),
+          }
+        ]
       },
       {
-        path: "",
-        redirectTo: "/app/tabs/browse",
-        pathMatch: "full",
+        path: 'itineraries/:uuid',
+        loadChildren: () =>
+          import('../itinerary-details/itinerary-details.module').then(
+            (m) => m.ItineraryDetailsPageModule
+          ),
+      },
+      {
+        path: '',
+        redirectTo: '/app/tabs/browse',
+        pathMatch: 'full',
       },
     ],
   },

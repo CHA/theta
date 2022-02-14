@@ -15,4 +15,7 @@ export class Itinerary extends BaseModel {
 
   @Field(() => [String], { nullable: true })
   imageUrls: string[];
+
+  @Field(() => [String], { nullable: true })
+  description: string;
 }

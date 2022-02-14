@@ -1,9 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>itinerary-details</ion-title>
+    <ion-title>{{itinerary?.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content *ngIf="itinerary">
+  <tta-image-slider [slides]="imageSlides"></tta-image-slider>
+  <ion-segment value="timeline">
+    <ion-segment-button value="timeline">
+      <ion-label>Timeline</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="calendar">
+      <ion-label>Calendar</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="map">
+      <ion-label>Map</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 </ion-content>

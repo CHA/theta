@@ -6,7 +6,7 @@ import { BrowseComponent } from './browse.component';
 import { BrowseRoutingModule } from './browse-routing.module';
 import { SharedModule } from '@theta/shared/shared.module';
 import { SearchComponent } from '../search/search.component';
-import { ItineraryCardComponent } from './itinerary-card/itinerary-card.component';
+import { ItineraryCardComponent } from '../itinerary-card/itinerary-card.component';
 
 @NgModule({
   imports: [
