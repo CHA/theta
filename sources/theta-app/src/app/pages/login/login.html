@@ -17,7 +17,7 @@
     <form #loginForm="ngForm" novalidate>
       <ion-list>
         <ion-item>
-          <ion-input placeholder="Username / Email" [(ngModel)]="login.username" name="username" type="text"
+          <ion-input placeholder="Username / Email" [(ngModel)]="user.username" name="username" type="text"
             #username="ngModel" spellcheck="false" autocapitalize="off" required>
           </ion-input>
         </ion-item>
@@ -29,7 +29,7 @@
         </ion-text>
 
         <ion-item>
-          <ion-input placeholder="Password" [(ngModel)]="login.password" name="password" type="password"
+          <ion-input placeholder="Password" [(ngModel)]="user.password" name="password" type="password"
             #password="ngModel" required>
           </ion-input>
         </ion-item>
@@ -40,18 +40,18 @@
           </p>
         </ion-text>
 
-        <ion-button (click)="login(loginForm)" type="submit" expand="block">Login</ion-button>
-        <ion-button (click)="signup()" color="light" expand="block">Signup</ion-button>
+        <ion-button (click)="login()" type="submit" expand="block">Login</ion-button>
+        <ion-button (click)="signup()" color="light" expand="block">Create Account</ion-button>
 
       </ion-list>
     </form>
 
     <div class="social-media ion-margin-bottom">
       <h3>Login using</h3>
-      <ion-button (click)="onClick()">
+      <ion-button (click)="login()">
         <ion-icon name="logo-facebook"></ion-icon>
       </ion-button>
-      <ion-button (click)="onClick()">
+      <ion-button (click)="login()">
         <ion-icon name="logo-google"></ion-icon>
       </ion-button>
     </div>

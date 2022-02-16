@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { UserData } from '../../providers/user-data';
 import { User } from '@theta/models/user';
 
 @Component({
@@ -14,7 +13,6 @@ export class LoginPage {
   submitted = false;
 
   constructor(
-    public userData: UserData,
     public router: Router
   ) { }
 
