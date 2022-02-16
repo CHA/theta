@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { Itinerary } from '@theta/models/itinerary';
 
@@ -8,15 +8,25 @@ import { Itinerary } from '@theta/models/itinerary';
     styleUrls: ['itinerary-card.component.scss']
 })
 
-export class ItineraryCardComponent implements OnInit {
+export class ItineraryCardComponent implements OnChanges {
 
     @Input() itinerary: Itinerary;
+    imageUrls: string[] = [];
 
     constructor(
         private router: Router
     ) { }
 
-    ngOnInit() { }
+    ngOnChanges(changes: SimpleChanges): void {
+        if (!changes.itinerary) {
+            return;
+        }
+        const itinerary = changes.itinerary.currentValue;
+        this.imageUrls.push(...itinerary.imageURLs);
+        itinerary.activities.forEach(a => {
+            this.imageUrls.push(...a.imageUrls);
+        });
+    }
 
     open(uuid: string) {
         this.router.navigateByUrl(`/app/tabs/itineraries/${uuid}`);

@@ -9,15 +9,20 @@
 
 <ion-content *ngIf="itinerary">
   <tta-image-slider [slides]="imageSlides"></tta-image-slider>
-  <ion-segment value="timeline">
-    <ion-segment-button value="timeline">
-      <ion-label>Timeline</ion-label>
+  <ion-segment [value]="ItineraryDetailsTab.Activities" (ionChange)="selectTab($event)">
+    <ion-segment-button [value]="ItineraryDetailsTab.Activities">
+      <ion-label>Activities</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="calendar">
+    <ion-segment-button [value]="ItineraryDetailsTab.Calendar">
       <ion-label>Calendar</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="map">
+    <ion-segment-button [value]="ItineraryDetailsTab.Map">
       <ion-label>Map</ion-label>
     </ion-segment-button>
   </ion-segment>
+  <div [ngSwitch]="selectedTab">
+    <tta-timeline *ngSwitchCase="ItineraryDetailsTab.Activities" [activities]="itinerary.activities"></tta-timeline>
+    <tta-calendar *ngSwitchCase="ItineraryDetailsTab.Calendar"></tta-calendar>
+    <tta-map *ngSwitchCase="ItineraryDetailsTab.Map"></tta-map>
+  </div>
 </ion-content>

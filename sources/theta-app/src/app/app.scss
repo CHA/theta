@@ -1,3 +1,7 @@
 * {
     font-family: 'Cereal' !important;
 }
+
+.no-scrollbar::-webkit-scrollbar{
+    display: none;
+}
