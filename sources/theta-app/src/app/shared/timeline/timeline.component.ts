@@ -3,14 +3,14 @@ import { Activity } from '@theta/models/activity';
 import { Emoji } from '../emojis';
 
 @Component({
-  selector: 'tta-timeline',
+  selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss'],
 })
 export class TimelineComponent implements OnInit {
 
   @Input() activities: Activity[];
-  Emoji = Emoji;
+  emoji = Emoji;
 
   constructor() { }
 

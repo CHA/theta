@@ -1,7 +1,7 @@
 {
   "name": "theta-app",
-  "type": "angular",
   "integrations": {
-    "cordova": {}
-  }
+    "capacitor": {}
+  },
+  "type": "angular"
 }

@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
 
-import { BrowseComponent } from './browse.component';
-import { BrowseRoutingModule } from './browse-routing.module';
+import { BrowsePageRoutingModule } from './browse-routing.module';
+
+import { BrowsePage } from './browse.page';
 import { SharedModule } from '@theta/shared/shared.module';
-import { SearchComponent } from '../search/search.component';
-import { ItineraryCardComponent } from '../itinerary-card/itinerary-card.component';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     IonicModule,
-    BrowseRoutingModule,
-    SharedModule
+    SharedModule,
+    BrowsePageRoutingModule
   ],
-  declarations: [
-    BrowseComponent,
-    ItineraryCardComponent,
-    SearchComponent
-  ],
+  declarations: [BrowsePage]
 })
-export class BrowseModule {}
+export class BrowsePageModule {}

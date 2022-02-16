@@ -6,7 +6,7 @@
       </ion-text>
       <p>{{activity.startTime | date: 'MMMM d, y h a'}}, {{activity.place.name}}</p>
       <p>
-        {{Emoji.Location}} {{activity.place.address}}
+        {{emoji.Location}} {{activity.place.address}}
       </p>
       <div class="tags no-scrollbar">
         <ion-chip size="small" outline color="primary" *ngFor="let tag of activity.tags">

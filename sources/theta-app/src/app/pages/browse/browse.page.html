@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Search"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-md="4" *ngFor="let itinerary of itineraries">
+        <app-itinerary-card [itinerary]="itinerary"></app-itinerary-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
