@@ -5,7 +5,10 @@ export class DefaultSwiperOptions {
     slidesPerView: 1,
     spaceBetween: 0,
     navigation: false,
-    pagination: { clickable: true, type: 'bullets' },
+    pagination: {
+      el: '.swiper-pagination',
+      dynamicBullets: true,
+    },
     scrollbar: { draggable: true },
   };
 }
