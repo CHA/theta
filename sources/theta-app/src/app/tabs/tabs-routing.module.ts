@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('../pages/profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
+        path: 'itineraries/:uuid',
+        loadChildren: () => import('../pages/itinerary/itinerary.module').then(m => m.ItineraryPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/browse',
         pathMatch: 'full'
@@ -36,4 +40,4 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

@@ -10,6 +10,8 @@ import { ItineraryService } from '@theta/services/itinerary.service';
 export class BrowsePage implements OnInit {
 
   itineraries: Itinerary[] = [];
+  showFilter: boolean;
+  today = new Date();
 
   constructor(
     private itineraryService: ItineraryService
@@ -17,6 +19,10 @@ export class BrowsePage implements OnInit {
 
   async ngOnInit() {
     this.itineraries = await this.itineraryService.search(null);
+  }
+
+  toggleFilter() {
+    this.showFilter = !this.showFilter;
   }
 
 }

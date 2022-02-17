@@ -4,6 +4,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content *ngIf="itinerary">
+  <app-image-slider [slides]="imageSlides"></app-image-slider>
+  <ion-segment [value]="itineraryTabEnum.activities" (ionChange)="selectTab($event)">
+    <ion-segment-button [value]="itineraryTabEnum.activities">
+      <ion-label>Activities</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [value]="itineraryTabEnum.calendar">
+      <ion-label>Calendar</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [value]="itineraryTabEnum.map">
+      <ion-label>Map</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="selectedTab">
+    <app-timeline *ngSwitchCase="itineraryTabEnum.activities" [activities]="itinerary.activities"></app-timeline>
+    <app-calendar *ngSwitchCase="itineraryTabEnum.calendar"></app-calendar>
+    <app-map *ngSwitchCase="itineraryTabEnum.map"></app-map>
+  </div>
 </ion-content>

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ItineraryPageRoutingModule } from './itinerary-routing.module';
 
 import { ItineraryPage } from './itinerary.page';
+import { SharedModule } from '@theta/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ItineraryPageRoutingModule
+    ItineraryPageRoutingModule,
+    SharedModule,
   ],
   declarations: [ItineraryPage]
 })
