@@ -1,12 +1,12 @@
 <ion-list>
   <ion-item *ngFor="let activity of activities">
     <ion-label>
-      <ion-text color="primary">
-        <h2>{{activity.name}}</h2>
-      </ion-text>
-      <p>{{activity.startTime | date: 'MMMM d, y h a'}}, {{activity.place.name}}</p>
+      <h2>{{activity.name}}</h2>
       <p>
-        {{emoji.Location}} {{activity.place.address}}
+        {{activity.place.name}}
+      </p>
+      <p>
+        {{activity.startTime | date: 'h a'}} - {{activity.endTime | date: 'h a'}}
       </p>
       <div class="tags no-scrollbar">
         <ion-chip size="small" outline color="primary" *ngFor="let tag of activity.tags">

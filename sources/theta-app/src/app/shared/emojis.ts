@@ -1,3 +1,5 @@
 export enum Emoji {
-  Location = '📍'
+  location = '📍',
+  moneyFly = '💸',
+  star = '⭐'
 }

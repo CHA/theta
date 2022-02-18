@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SwiperOptions } from '../config/swiper-options';
 
 import { ImageSlide } from './image-slide';
 
@@ -9,6 +10,8 @@ import { ImageSlide } from './image-slide';
 })
 export class ImageSliderComponent implements OnInit {
   @Input() slides: ImageSlide[] = [];
+
+  swiperConfig = SwiperOptions.default;
 
   constructor() { }
 
