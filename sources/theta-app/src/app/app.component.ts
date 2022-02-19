@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppService } from './services/app.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
-  constructor() {}
+export class AppComponent implements OnInit {
+
+  darkTheme = true;
+
+  constructor(
+    public app: AppService
+  ) { }
+
+  ngOnInit(): void {
+    this.app.userDarkThemeSource$.subscribe(result => this.darkTheme = result);
+  }
+
 }
