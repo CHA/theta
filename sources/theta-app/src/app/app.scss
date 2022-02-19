@@ -5,3 +5,8 @@
 .no-scrollbar::-webkit-scrollbar{
   display: none;
 }
+
+.scrollable {
+  white-space: nowrap !important;
+  overflow-x: scroll  !important;
+}

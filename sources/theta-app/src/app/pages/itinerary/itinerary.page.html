@@ -5,8 +5,9 @@
     </ion-buttons>
     <ion-title>{{itinerary.name}}</ion-title>
     <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="bookmark-outline"></ion-icon>
+      <ion-button (click)="toggleLike()">
+        <ion-icon *ngIf="!liked" name="heart-outline"></ion-icon>
+        <ion-icon *ngIf="liked" name="heart" color="red"></ion-icon>
       </ion-button>
       <ion-button>
         <ion-icon slot="icon-only" ios="share-outline" md="share-sharp"></ion-icon>

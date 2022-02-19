@@ -1,9 +1,44 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="heart-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="map-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Theta</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon class="notification-icon" name="notifications-outline"></ion-icon>
+        <ion-badge class="notification-badge">12</ion-badge>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content fullscreen="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p class="title">Highlights</p>
+        <div class="card-effect">
+          <app-card-slider [cards]="recommendations" [config]="cardEffectSwiperOptions"></app-card-slider>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p class="title">Near you</p>
+        <app-card-slider [cards]="topPicks" [config]="freeModeSwiperOptions"></app-card-slider>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p class="title">Recommendations</p>
+        <app-card-slider [cards]="recommendations" [config]="freeModeSwiperOptions"></app-card-slider>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

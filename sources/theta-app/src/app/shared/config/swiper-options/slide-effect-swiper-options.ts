@@ -1,7 +1,7 @@
 import { SwiperOptions } from 'swiper';
 
 export class SlideEffectSwiperOptions {
-  static options: SwiperOptions = {
+  static config: SwiperOptions = {
     slidesPerView: 1,
     navigation: true,
     pagination: { clickable: true },

@@ -1,0 +1,45 @@
+ion-card {
+  margin: 4px 4px 20px 4px;
+}
+
+ion-card-header{
+  padding: 6px;
+}
+
+ion-card-subtitle {
+  text-align: left;
+}
+
+ion-card-content {
+  font-size: 12px;
+  text-align: left;
+  padding: 6px;
+}
+
+ion-badge {
+  align-items: inherit;
+  float: right;
+  margin: 8px;
+  font-size: 12px;
+}
+
+.no-margin {
+  margin:0px;
+}
+
+.img-sm {
+  height: 28vw !important;
+}
+
+.caption-sm {
+  height: 22vw !important;
+}
+
+.img-md {
+  height: 60vw !important;
+}
+
+.caption-md {
+  height: 22vw !important;
+}
+

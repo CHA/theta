@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { SwiperModule } from 'swiper/angular';
 
 import { CalendarComponent } from './calendar/calendar.component';
+import { CardSliderComponent } from './card-slider/card-slider.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { ItineraryCardComponent } from './itinerary-card/itinerary-card.component';
 import { MapComponent } from './map/map.component';
@@ -23,6 +24,7 @@ import { TimelineComponent } from './timeline/timeline.component';
         IonicModule,
         SwiperModule,
         CalendarComponent,
+        CardSliderComponent,
         ImageSliderComponent,
         ItineraryCardComponent,
         MapComponent,
@@ -30,6 +32,7 @@ import { TimelineComponent } from './timeline/timeline.component';
     ],
     declarations: [
         CalendarComponent,
+        CardSliderComponent,
         ImageSliderComponent,
         ItineraryCardComponent,
         MapComponent,

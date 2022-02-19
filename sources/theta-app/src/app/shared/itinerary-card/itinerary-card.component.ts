@@ -2,7 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { Itinerary } from '@theta/models/itinerary';
-import { SwiperOptions } from '../config/swiper-options';
+import { DefaultSwiperOptions } from '../config/swiper-options/default-swiper-options';
 
 @Component({
     selector: 'app-itinerary-card',
@@ -14,7 +14,7 @@ export class ItineraryCardComponent implements OnChanges {
 
     @Input() itinerary: Itinerary;
     imageUrls: string[] = [];
-    swiperConfig = SwiperOptions.default;
+    swiperConfig = DefaultSwiperOptions.config;
 
     constructor(
         private router: Router

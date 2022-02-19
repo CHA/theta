@@ -21,6 +21,7 @@ export class ItineraryPage implements OnInit {
   itineraryTabEnum = ItineraryTab;
   score = 4.5;
   emojiEnum = Emoji;
+  liked: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -47,6 +48,10 @@ export class ItineraryPage implements OnInit {
 
   selectTab(event: CustomEvent) {
     this.selectedTab = event.detail.value;
+  }
+
+  toggleLike() {
+    this.liked = !this.liked;
   }
 
 
