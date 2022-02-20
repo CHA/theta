@@ -46,7 +46,7 @@ export class ItineraryPage implements OnInit {
   }
 
 
-  selectTab(event: CustomEvent) {
+  selectTab(event) {
     this.selectedTab = event.detail.value;
   }
 

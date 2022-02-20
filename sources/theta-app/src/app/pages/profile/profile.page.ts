@@ -36,7 +36,7 @@ export class ProfilePage implements OnInit {
     };
   }
 
-  toggleDarkTheme(event: CustomEvent) {
+  toggleDarkTheme(event) {
     this.app.emitUserDarkTheme(!event.detail.checked);
   }
 

@@ -7,4 +7,5 @@ export interface Activity extends BaseModel {
   endTime: Date;
   place: Place;
   imageUrls: string[];
+  tags: string[];
 }
