@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Card } from '@theta/models/card';
 import SwiperCore, { EffectCards, EffectCoverflow, FreeMode, Pagination, SwiperOptions } from 'swiper';
 import { CardEffectSwiperOptions } from '../config/swiper-options/card-effect-swiper-options';
-import { CardSlide } from './card-slide';
 
 SwiperCore.use([Pagination, FreeMode, EffectCards, EffectCoverflow]);
 
@@ -12,7 +12,7 @@ SwiperCore.use([Pagination, FreeMode, EffectCards, EffectCoverflow]);
 })
 export class CardSliderComponent implements OnInit, OnChanges {
 
-  @Input() cards: CardSlide[];
+  @Input() cards: Card[];
   @Input() config: SwiperOptions;
   useCardEffect: boolean;
 

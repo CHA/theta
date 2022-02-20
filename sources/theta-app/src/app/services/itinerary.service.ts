@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Card } from '@theta/models/card';
 import { Itinerary } from '@theta/models/itinerary';
 import { SearchCriteria } from '@theta/models/search-criteria';
-import { CardSlide } from '@theta/shared/card-slider/card-slide';
 
 @Injectable({ providedIn: 'root' })
 export class ItineraryService {
@@ -20,15 +20,15 @@ export class ItineraryService {
     return Promise.resolve(result);
   }
 
-  getCardSlides(itineraries: Itinerary[]): CardSlide[] {
-    const slides: CardSlide[] = [];
+  toCards(itineraries: Itinerary[]): Card[] {
+    const cards: Card[] = [];
     itineraries.forEach(i => {
-      slides.push({
-        imageUrl: i.imageURLs[0],
-        subTitle: i.name,
-        note: i.description
+      cards.push({
+        imageUrls: [i.imageURLs[0]],
+        title: i.name,
+        text: i.description
       });
     });
-    return slides;
+    return cards;
   }
 }

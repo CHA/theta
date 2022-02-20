@@ -24,20 +24,20 @@
       <ion-col>
         <p class="title">Highlights</p>
         <div class="card-effect">
-          <app-card-slider [cards]="recommendations" [config]="cardEffectSwiperOptions"></app-card-slider>
+          <app-card-slider [cards]="recommendations" [config]="swiper.cardEffectSwiperOptions"></app-card-slider>
         </div>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <p class="title">Near you</p>
-        <app-card-slider [cards]="topPicks" [config]="freeModeSwiperOptions"></app-card-slider>
+        <app-card-slider [cards]="topPicks" [config]="swiper.freeModeSwiperOptions"></app-card-slider>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <p class="title">Recommendations</p>
-        <app-card-slider [cards]="recommendations" [config]="freeModeSwiperOptions"></app-card-slider>
+        <app-card-slider [cards]="recommendations" [config]="swiper.freeModeSwiperOptions"></app-card-slider>
       </ion-col>
     </ion-row>
   </ion-grid>

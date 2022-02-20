@@ -10,6 +10,11 @@ ion-card-subtitle {
   text-align: left;
 }
 
+ion-card-title {
+  font-size: 14px;
+  text-align: left;
+}
+
 ion-card-content {
   font-size: 12px;
   text-align: left;
@@ -29,17 +34,17 @@ ion-badge {
 
 .img-sm {
   height: 28vw !important;
-}
-
-.caption-sm {
-  height: 22vw !important;
+  max-height: 28vw !important;
 }
 
 .img-md {
   height: 60vw !important;
 }
 
-.caption-md {
+.caption-sm {
   height: 22vw !important;
 }
 
+.caption-md {
+  height: 22vw !important;
+}

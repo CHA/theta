@@ -2,13 +2,13 @@
   <swiper [config]="config">
     <ng-template swiperSlide *ngFor="let card of cards">
       <ion-card [class.no-margin]="useCardEffect" class="card">
-        <img [ngClass]="useCardEffect ? 'img-md' : 'img-sm'" *ngIf="card.imageUrl" [src]="card.imageUrl" />
+        <img [ngClass]="useCardEffect ? 'img-md' : 'img-sm'" *ngIf="card.imageUrls?.length" [src]="card.imageUrls[0]" />
         <div [ngClass]="useCardEffect ? 'caption-md' : 'caption-sm'">
           <ion-card-header>
-            <ion-card-subtitle *ngIf="card.subTitle">{{card.subTitle}}</ion-card-subtitle>
+            <ion-card-title>{{card.title}}</ion-card-title>
           </ion-card-header>
           <ion-card-content *ngIf="useCardEffect">
-            {{card.note}}
+            {{card.text}}
           </ion-card-content>
           <ion-badge color="primary">free</ion-badge>
         </div>

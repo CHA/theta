@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Card } from '@theta/models/card';
 import { User } from '@theta/models/user';
 import { AppService } from '@theta/services/app.service';
 import { ItineraryService } from '@theta/services/itinerary.service';
-import { CardSlide } from '@theta/shared/card-slider/card-slide';
 import { FreeModeSwiperOptions } from '@theta/shared/config/swiper-options/free-mode-swiper-options';
 import { Emoji } from '@theta/shared/emojis';
 
@@ -14,9 +14,9 @@ import { Emoji } from '@theta/shared/emojis';
 export class ProfilePage implements OnInit {
 
   user: User;
-  favItineraries: CardSlide[];
+  favItineraries: Card[];
   emoji = Emoji;
-  freeModeSwiperOptions  = FreeModeSwiperOptions.config;
+  freeModeSwiperOptions = FreeModeSwiperOptions.config;
 
   constructor(
     private app: AppService,
@@ -24,7 +24,7 @@ export class ProfilePage implements OnInit {
   ) { }
 
   async ngOnInit() {
-    this.favItineraries = this.itineraryService.getCardSlides(await this.itineraryService.search(null));
+    this.favItineraries = this.itineraryService.toCards(await this.itineraryService.search(null));
     this.user = {
       firstName: 'Christofel',
       lastName: 'Hakim',
