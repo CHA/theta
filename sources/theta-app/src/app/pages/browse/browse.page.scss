@@ -2,3 +2,15 @@ ion-grid {
   --ion-grid-padding: 0px;
   --ion-grid-margin: 0px;
 }
+
+.col-wrapper {
+  min-height: 100px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}

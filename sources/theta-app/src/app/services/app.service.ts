@@ -15,4 +15,20 @@ export class AppService {
     this.userDarkThemeSource.next(useDarkTheme);
   }
 
+  assetsPath() {
+    return '/assets';
+  }
+
+  imagesPath() {
+    return `${this.assetsPath()}/images`;
+  }
+
+  avatarsPath() {
+    return `${this.imagesPath()}/avatars`;
+  }
+
+  backgroundsPath() {
+    return `${this.imagesPath()}/backgrounds`;
+  }
+
 }

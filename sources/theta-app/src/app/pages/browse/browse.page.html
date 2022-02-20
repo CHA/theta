@@ -18,11 +18,25 @@
   <div>
     <ion-searchbar placeholder="Search by destinations or budget"></ion-searchbar>
   </div>
-  <ion-grid fixed>
+  <ion-grid class="ion-padding">
     <ion-row>
-      <ion-col size-md="6" size-lg="4" *ngFor="let itinerary of itineraries">
-        <app-itinerary-card [itinerary]="itinerary"></app-itinerary-card>
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let category of categories">
+        <div class="col-wrapper" [style.background-image]="'url(' + category.imageUrl + ')'">
+          {{category.name}}
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ion-list *ngIf="recentlyViewed">
+    <ion-list-header> Recently Viewed </ion-list-header>
+    <ion-item *ngFor="let itinerary of recentlyViewed">
+      <ion-thumbnail slot="end">
+        <img [src]="itinerary.imageUrls[0]" />
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{itinerary.name}}</h3>
+        <p>{{itinerary.description}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

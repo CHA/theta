@@ -14,5 +14,5 @@ export interface Itinerary extends BaseModel {
     tags: string[];
     pace: Pace;
     userId: string;
-    imageURLs: string[];
+    imageUrls: string[];
 }

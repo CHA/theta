@@ -6,7 +6,9 @@ import { SearchCriteria } from '@theta/models/search-criteria';
 
 @Injectable({ providedIn: 'root' })
 export class ItineraryService {
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient
+  ) { }
 
   search(criteria: SearchCriteria): Promise<Itinerary[]> {
     // TODO: Call API and send the keyword as criteria
@@ -24,11 +26,12 @@ export class ItineraryService {
     const cards: Card[] = [];
     itineraries.forEach(i => {
       cards.push({
-        imageUrls: [i.imageURLs[0]],
+        imageUrls: [i.imageUrls[0]],
         title: i.name,
         text: i.description
       });
     });
     return cards;
   }
+
 }

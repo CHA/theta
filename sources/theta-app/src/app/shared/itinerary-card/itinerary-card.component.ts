@@ -25,7 +25,7 @@ export class ItineraryCardComponent implements OnChanges {
             return;
         }
         const itinerary = changes.itinerary.currentValue;
-        this.imageUrls.push(...itinerary.imageURLs);
+        this.imageUrls.push(...itinerary.imageUrls);
         itinerary.activities.forEach(a => {
             this.imageUrls.push(...a.imageUrls);
         });
