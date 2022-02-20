@@ -16,7 +16,7 @@ export class AppService {
   }
 
   assetsPath() {
-    return '/assets';
+    return 'assets';
   }
 
   imagesPath() {
