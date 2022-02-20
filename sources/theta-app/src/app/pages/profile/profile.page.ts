@@ -28,7 +28,7 @@ export class ProfilePage implements OnInit {
     this.user = {
       firstName: 'Christofel',
       lastName: 'Hakim',
-      profilePicUrl: '/assets/images/avatars/rabbit.jpg',
+      profilePicUrl: 'assets/images/avatars/rabbit.jpg',
       username: 'christofelh',
       email: 'christofelh@gmail.com',
       password: '',
