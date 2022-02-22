@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
     <ion-title>Account Registration</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -80,7 +83,7 @@
     </ion-row>
   </form>
   <div>
-    <p class="ion-padding-start">or if you already have account, please login</p>
+    <p class="ion-padding-start">if you already have an account, please login</p>
     <ion-button color="light" expand="block" (click)="login()">Login</ion-button>
   </div>
 </ion-content>
