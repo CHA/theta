@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
-import { Router } from '@angular/router';
 import { Itinerary } from '@theta/models/itinerary';
+import { AppService } from '@theta/services/app.service';
 import { DefaultSwiperOptions } from '../config/swiper-options/default-swiper-options';
 
 @Component({
@@ -17,7 +17,7 @@ export class ItineraryCardComponent implements OnChanges {
     swiperConfig = DefaultSwiperOptions.config;
 
     constructor(
-        private router: Router
+        private app: AppService
     ) { }
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -32,6 +32,6 @@ export class ItineraryCardComponent implements OnChanges {
     }
 
     open(uuid: string) {
-        this.router.navigateByUrl(`/app/itineraries/${uuid}`);
+        this.app.navigateToTab(`itineraries/${uuid}`);
     }
 }
