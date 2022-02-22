@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -9,7 +10,9 @@ export class AppService {
   // eslint-disable-next-line @typescript-eslint/member-ordering
   userDarkThemeSource$ = this.userDarkThemeSource.asObservable();
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   emitUserDarkTheme(useDarkTheme: boolean) {
     this.userDarkThemeSource.next(useDarkTheme);
@@ -29,6 +32,14 @@ export class AppService {
 
   backgroundsPath() {
     return `${this.imagesPath()}/backgrounds`;
+  }
+
+  navigateToTab(tab: string) {
+    this.router.navigateByUrl(`/tabs/${tab}`);
+  }
+
+  navigateTo(url: string) {
+    this.router.navigateByUrl(`${url}`);
   }
 
 }

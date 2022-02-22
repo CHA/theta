@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Account Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="login-logo">
+    <img src="assets/images/theta-logo.png" alt="Theta logo">
+  </div>
+  <h1 class="ion-padding-start">Create your account</h1>
+  <form *ngIf="signupForm" [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating" color="primary">Email</ion-label>
+        <ion-input formControlName="email" type="email" autocapitalize="off" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger" *ngIf="submitted && formControls.email.errors?.required">
+        <p class="ion-padding-start">
+          *required
+        </p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating" color="primary">First Name</ion-label>
+        <ion-input formControlName="firstName" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger" *ngIf="submitted && formControls.firstName.errors?.required">
+        <p class="ion-padding-start">
+          *required
+        </p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating" color="primary">Last Name</ion-label>
+        <ion-input formControlName="lastName" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger" *ngIf="submitted && formControls.lastName.errors?.required">
+        <p class="ion-padding-start">
+          *required
+        </p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating" color="primary">Password</ion-label>
+        <ion-input formControlName="password" type="password" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger" *ngIf="submitted && formControls.password.errors?.required">
+        <p class="ion-padding-start">
+          *required
+        </p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating" color="primary">Confirm Password</ion-label>
+        <ion-input formControlName="confirmPassword" type="password" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger" *ngIf="submitted && formControls.password.value !== formControls.confirmPassword.value">
+        <p class="ion-padding-start">
+          Password doesn't match
+        </p>
+      </ion-text>
+
+    </ion-list>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" expand="block">Register</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  <div>
+    <p class="ion-padding-start">or if you already have account, please login</p>
+    <ion-button color="light" expand="block" (click)="login()">Login</ion-button>
+  </div>
+</ion-content>

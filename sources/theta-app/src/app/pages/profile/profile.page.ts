@@ -31,7 +31,6 @@ export class ProfilePage implements OnInit {
       profilePicUrl: 'assets/images/avatars/rabbit.jpg',
       username: 'christofelh',
       email: 'christofelh@gmail.com',
-      password: '',
       about: 'Hi there, I am Chris, the quick brown fox jumps over lazy dogs'
     };
   }
