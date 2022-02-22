@@ -4,7 +4,7 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: 'app',
     component: TabsPage,
     children: [
       {
@@ -24,15 +24,19 @@ const routes: Routes = [
         loadChildren: () => import('../pages/itinerary/itinerary.module').then(m => m.ItineraryPageModule)
       },
       {
+        path: 'login',
+        loadChildren: () => import('../pages/login/login.module').then(m => m.LoginPageModule)
+      },
+      {
         path: '',
-        redirectTo: '/tabs/home',
+        redirectTo: '/app/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: '/app/home',
     pathMatch: 'full'
   }
 ];

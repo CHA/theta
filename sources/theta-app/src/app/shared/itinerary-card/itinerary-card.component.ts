@@ -32,6 +32,6 @@ export class ItineraryCardComponent implements OnChanges {
     }
 
     open(uuid: string) {
-        this.router.navigateByUrl(`/tabs/itineraries/${uuid}`);
+        this.router.navigateByUrl(`/app/itineraries/${uuid}`);
     }
 }

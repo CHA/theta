@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ItineraryPageRoutingModule } from './itinerary-routing.module';
-import { ItineraryPage } from './itinerary.page';
+import { LoginPageRoutingModule } from './login-routing.module';
+
+import { LoginPage } from './login.page';
 import { SharedModule } from '@theta/shared/shared.module';
 
 @NgModule({
@@ -13,9 +14,9 @@ import { SharedModule } from '@theta/shared/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    ItineraryPageRoutingModule,
-    SharedModule,
+    LoginPageRoutingModule,
+    SharedModule
   ],
-  declarations: [ItineraryPage]
+  declarations: [LoginPage]
 })
-export class ItineraryPageModule {}
+export class LoginPageModule {}

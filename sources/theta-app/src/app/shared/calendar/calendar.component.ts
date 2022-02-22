@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalendarMode, Step } from 'ionic2-calendar/calendar';
 
 @Component({
   selector: 'app-calendar',
@@ -9,6 +10,6 @@ export class CalendarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { SwiperModule } from 'swiper/angular';
 
@@ -16,12 +16,14 @@ import { TimelineComponent } from './timeline/timeline.component';
         CommonModule,
         FormsModule,
         IonicModule,
+        ReactiveFormsModule,
         SwiperModule
     ],
     exports: [
         CommonModule,
         FormsModule,
         IonicModule,
+        ReactiveFormsModule,
         SwiperModule,
         CalendarComponent,
         CardSliderComponent,
