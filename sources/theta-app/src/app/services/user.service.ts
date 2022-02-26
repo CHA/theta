@@ -1,21 +1,37 @@
 import { Injectable } from '@angular/core';
 import { User } from '@theta/models/user';
+import { CacheKey } from '@theta/shared/cache';
+import { AppService } from './app.service';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
 
-  user: User;
+  constructor(
+    private app: AppService,
+    private localStorageService: LocalStorageService
+  ) { }
 
-  constructor() { }
+  get user() {
+    return this.localStorageService.get<User>(CacheKey.user);
+  }
 
-  async login(username: string, password: string): Promise<User> {
-    this.user.token = 'someToken';
-    return this.user;
+  async login(username: string, password: string): Promise<string> {
+    // TODO: Authenticate
+    const user = {
+      email: 'christofelh@gmail.com',
+      firstName: 'Christofel',
+      lastName: 'Hakim',
+      profilePicUrl: `${this.app.avatarsPath}/bear.jpg`,
+      token: 'someToken'
+    };
+    this.localStorageService.set(CacheKey.user, user);
+    return user.token;
   }
 
   async signup(user: User): Promise<User> {
-    this.user.token = 'someToken';
-    return this.user;
+    this.localStorageService.set(CacheKey.user, user);
+    return user;
   }
 
 }

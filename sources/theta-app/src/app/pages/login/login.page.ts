@@ -32,16 +32,16 @@ export class LoginPage implements OnInit {
     this.submitted = true;
     const username = this.loginForm.controls.username.value;
     const password = this.loginForm.controls.password.value;
-    const success = await this.userService.login(username, password);
-    if(success) {
-      this.app.navigateToTab('home');
+    const token = await this.userService.login(username, password);
+    if(token) {
+      this.app.toHome();
     } else {
       this.loginFailed = true;
     }
   }
 
   signup(){
-    this.app.navigateTo('/signup');
+    this.app.toSignUpPage();
   }
 
 }

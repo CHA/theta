@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Card } from '@theta/models/card';
 import { Itinerary } from '@theta/models/itinerary';
+import { User } from '@theta/models/user';
+import { AppService } from '@theta/services/app.service';
 import { ItineraryService } from '@theta/services/itinerary.service';
 import { SwiperService } from '@theta/services/swiper.service';
+import { UserService } from '@theta/services/user.service';
 import SwiperCore, { FreeMode, Pagination } from 'swiper';
 
 SwiperCore.use([FreeMode, Pagination]);
@@ -17,11 +21,20 @@ export class HomePage implements OnInit {
   itineraries: Itinerary[] = [];
   topPicks: Card[] = [];
   recommendations: Card[] = [];
+  user: User;
 
   constructor(
     public swiper: SwiperService,
-    private itineraryService: ItineraryService
-  ) { }
+    private app: AppService,
+    private itineraryService: ItineraryService,
+    private userService: UserService,
+    private route: ActivatedRoute
+  ) {
+    this.route.params.subscribe(() => {
+      this.user = this.userService.user;
+      console.log(this.user);
+    });
+  }
 
   async ngOnInit() {
     this.itineraries = await this.itineraryService.search(null);
@@ -32,6 +45,10 @@ export class HomePage implements OnInit {
   async refresh(event) {
     this.itineraries = await this.itineraryService.search(null);
     event.target.complete();
+  }
+
+  login() {
+    this.app.toLoginPage();
   }
 
 }

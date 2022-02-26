@@ -23,7 +23,7 @@ export class CategoryService {
       const imgName = this.categories.includes(tag) ? tag : 'default';
       categories.push({
         name: tag,
-        imageUrl: `${this.app.backgroundsPath()}/${imgName}.png`
+        imageUrl: `${this.app.backgroundsPath}/${imgName}.png`
       });
     });
     console.log(categories);

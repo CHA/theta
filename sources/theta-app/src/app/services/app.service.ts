@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
@@ -11,27 +12,29 @@ export class AppService {
   userDarkThemeSource$ = this.userDarkThemeSource.asObservable();
 
   constructor(
-    private router: Router
+    private router: Router,
+    private location: Location
   ) { }
 
-  emitUserDarkTheme(useDarkTheme: boolean) {
-    this.userDarkThemeSource.next(useDarkTheme);
-  }
 
-  assetsPath() {
+  get assetsPath() {
     return 'assets';
   }
 
-  imagesPath() {
-    return `${this.assetsPath()}/images`;
+  get imagesPath() {
+    return `${this.assetsPath}/images`;
   }
 
-  avatarsPath() {
-    return `${this.imagesPath()}/avatars`;
+  get avatarsPath() {
+    return `${this.imagesPath}/avatars`;
   }
 
-  backgroundsPath() {
-    return `${this.imagesPath()}/backgrounds`;
+  get backgroundsPath() {
+    return `${this.imagesPath}/backgrounds`;
+  }
+
+  emitUserDarkTheme(useDarkTheme: boolean) {
+    this.userDarkThemeSource.next(useDarkTheme);
   }
 
   navigateToTab(tab: string) {
@@ -40,6 +43,22 @@ export class AppService {
 
   navigateTo(url: string) {
     this.router.navigateByUrl(`${url}`);
+  }
+
+  toHome(){
+    this.router.navigateByUrl('/tabs/home');
+  }
+
+  toLoginPage() {
+    this.router.navigateByUrl('/login');
+  }
+
+  toSignUpPage() {
+    this.router.navigateByUrl('/signup');
+  }
+
+  back() {
+    this.location.back();
   }
 
 }
