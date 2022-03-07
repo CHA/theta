@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { Card } from '@theta/models/card';
 import { Itinerary } from '@theta/models/itinerary';
 import { User } from '@theta/models/user';
@@ -28,11 +29,11 @@ export class HomePage implements OnInit {
     private app: AppService,
     private itineraryService: ItineraryService,
     private userService: UserService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private menuController: MenuController
   ) {
     this.route.params.subscribe(() => {
       this.user = this.userService.user;
-      console.log(this.user);
     });
   }
 
@@ -49,6 +50,10 @@ export class HomePage implements OnInit {
 
   login() {
     this.app.toLoginPage();
+  }
+
+  openMenu() {
+    this.menuController.open();
   }
 
 }

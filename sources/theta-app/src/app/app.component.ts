@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { User } from './models/user';
 import { AppService } from './services/app.service';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +11,26 @@ import { AppService } from './services/app.service';
 })
 export class AppComponent implements OnInit {
 
-  darkTheme = true;
+  dark = false;
+  user: User;
 
   constructor(
-    public app: AppService
+    public app: AppService,
+    private userService: UserService,
+    private menuController: MenuController
   ) { }
 
   ngOnInit(): void {
-    this.app.userDarkThemeSource$.subscribe(result => this.darkTheme = result);
+    this.user = this.userService.user;
+  }
+
+  viewProfile() {
+    this.app.toProfilePage();
+    this.menuController.close();
+  }
+
+  async signout() {
+    this.user = await this.userService.logout(this.user);
   }
 
 }

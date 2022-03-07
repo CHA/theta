@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WalletTab } from './wallet-tab.enum';
 
 @Component({
   selector: 'app-wallet',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WalletPage implements OnInit {
 
+  selectedTab = WalletTab.bookings;
+  walletTabEnum = WalletTab;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectTab(event) {
+    this.selectedTab = event.detail.value;
   }
 
 }

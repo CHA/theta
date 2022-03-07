@@ -19,7 +19,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
-    path: 'itinerary',
+    path: 'itinerary/:uuid',
     loadChildren: () => import('./pages/itinerary/itinerary.module').then( m => m.ItineraryPageModule)
   },
   {

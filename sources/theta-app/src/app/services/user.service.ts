@@ -34,4 +34,9 @@ export class UserService {
     return user;
   }
 
+  async logout(user: User): Promise<User> {
+    this.localStorageService.remove(CacheKey.user);
+    return null;
+  }
+
 }

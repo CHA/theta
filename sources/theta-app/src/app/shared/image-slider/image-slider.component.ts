@@ -26,7 +26,6 @@ export class ImageSliderComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.config) {
       this.config = changes.options?.currentValue;
-      console.log(this.config);
     }
   }
 }

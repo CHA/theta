@@ -32,6 +32,6 @@ export class ItineraryCardComponent implements OnChanges {
     }
 
     open(uuid: string) {
-        this.app.navigateToTab(`itineraries/${uuid}`);
+        this.app.toItinerary(uuid);
     }
 }

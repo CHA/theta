@@ -7,7 +7,7 @@ import { ItineraryService } from './itinerary.service';
 @Injectable({ providedIn: 'root' })
 export class CategoryService {
 
-  private categories = ['outdoor', 'food'];
+  private categories = ['food', 'date', 'london', 'shopping', 'party', 'outdoor'];
   constructor(
     private app: AppService,
     private itineraryService: ItineraryService
@@ -26,7 +26,6 @@ export class CategoryService {
         imageUrl: `${this.app.backgroundsPath}/${imgName}.png`
       });
     });
-    console.log(categories);
     return categories;
   }
 }

@@ -57,6 +57,14 @@ export class AppService {
     this.router.navigateByUrl('/signup');
   }
 
+  toProfilePage() {
+    this.router.navigateByUrl('/profile');
+  }
+
+  toItinerary(uuid: string) {
+    this.router.navigateByUrl(`/itinerary/${uuid}`);
+  }
+
   back() {
     this.location.back();
   }

@@ -21,7 +21,7 @@
   <ion-grid class="ion-padding">
     <ion-row>
       <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let category of categories">
-        <div class="col-wrapper" [style.background-image]="'url(' + category.imageUrl + ')'">
+        <div class="col-wrapper category-title" [style.background-image]="'url(' + category.imageUrl + ')'">
           {{category.name}}
         </div>
       </ion-col>
