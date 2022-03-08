@@ -24,6 +24,10 @@ const routes: Routes = [
         loadChildren: () => import('../pages/itinerary/itinerary.module').then(m => m.ItineraryPageModule)
       },
       {
+        path: 'plans',
+        loadChildren: () => import('../pages/plans/plans.module').then(m => m.PlansPageModule)
+      },
+      {
         path: 'wallet',
         loadChildren: () => import('../pages/wallet/wallet.module').then(m => m.WalletPageModule)
       },

@@ -1,28 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Theta Wallet</ion-title>
+    <ion-title>Wallet</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-segment [value]="walletTabEnum.bookings" (ionChange)="selectTab($event)">
-    <ion-segment-button [value]="walletTabEnum.bookings">
-      <ion-label>Your Bookings</ion-label>
-    </ion-segment-button>
     <ion-segment-button [value]="walletTabEnum.documents">
       <ion-label>Documents</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [value]="walletTabEnum.bookings">
+      <ion-label>Your Bookings</ion-label>
     </ion-segment-button>
   </ion-segment>
 
   <div [ngSwitch]="selectedTab" class="ion-padding">
-    <div *ngSwitchCase="walletTabEnum.bookings">
-      You have no bookings
-    </div>
     <div *ngSwitchCase="walletTabEnum.documents">
       You have no documents
+    </div>
+    <div *ngSwitchCase="walletTabEnum.bookings">
+      You have no bookings
     </div>
   </div>
 </ion-content>

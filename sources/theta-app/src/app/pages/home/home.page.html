@@ -5,7 +5,7 @@
         <ion-icon name="log-in-outline"></ion-icon>
       </ion-button>
       <ion-button *ngIf="user" (click)="openMenu()">
-        <ion-avatar class="prifle-avatar">
+        <ion-avatar class="profile-avatar">
           <img [src]="user.profilePicUrl" />
         </ion-avatar>
       </ion-button>
@@ -21,6 +21,7 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content fullscreen="true">

@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: 'wallet',
     loadChildren: () => import('./pages/wallet/wallet.module').then( m => m.WalletPageModule)
+  },
+  {
+    path: 'plans',
+    loadChildren: () => import('./pages/plans/plans.module').then( m => m.PlansPageModule)
   }
 ];
 @NgModule({

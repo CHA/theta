@@ -22,7 +22,7 @@ export class UserService {
       email: 'christofelh@gmail.com',
       firstName: 'Christofel',
       lastName: 'Hakim',
-      profilePicUrl: `${this.app.avatarsPath}/bear.jpg`,
+      profilePicUrl: `${this.app.avatarsPath}/puppy.jpg`,
       token: 'someToken'
     };
     this.localStorageService.set(CacheKey.user, user);
