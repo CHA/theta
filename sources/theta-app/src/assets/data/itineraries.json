@@ -6,7 +6,7 @@
     "lastModifedBy": null,
     "lastModifiedDate": null,
     "name": "Weekend at Canary Wharf",
-    "score": null,
+    "score": 4.8,
     "activities": [
       {
         "name": "View the wild-life",
@@ -140,125 +140,29 @@
   },
   {
     "uuid": "2",
-    "createdBy": "Christofel",
+    "createdBy": "hakimchr",
     "createdDate": "20-May-2021 12:00",
     "lastModifedBy": null,
     "lastModifiedDate": null,
     "name": "Things to do in Chinatown",
-    "score": null,
+    "score": 3.9,
     "activities": [
       {
-        "name": "Visit Mudchute Park",
-        "startTime": "20-May-2021 15:00",
-        "endTime": "20-May-2021 17:00",
-        "place": {
-          "name": "Mudchute Park",
-          "address": "Pier St, London E14 3HP",
-          "postCode": "E14 3HP",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["outdoor", "london", "party", "outdoor", "london", "party"],
-        "imageUrls": [
-          "https://www.mudchute.org/blog/wp-content/uploads/mudchute-7768-1024x682.jpg",
-          "https://canary.life/wp-content/uploads/2019/12/Visit-Mudchute-Park-and-Farm-2.jpg"
-        ]
-      },
-      {
-        "name": "Dinner at Six by Nico",
-        "startTime": "20-May-2021 20:00",
+        "name": "Dinner at Gold Mine",
+        "startTime": "20-May-2021 18:00",
         "endTime": "20-May-2021 20:00",
         "place": {
-          "name": "Six by Nico",
-          "address": "Chancellor Passage, London E14 5EA",
-          "postCode": "E14 5EA",
+          "name": "Gold mine restaurant",
+          "address": "45 Wardour St",
+          "postCode": "W1D 6PZ",
           "city": {
             "name": "London",
             "country": "United Kingdom"
           }
         },
-        "tags": ["shopping", "date", "food"],
+        "tags": ["dinner", "chinese food"],
         "imageUrls": [
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-menu_10082021084839.jpg?w=928&h=522&fit=crop",
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-opening-times_10082021084847.jpg?w=928&h=522&fit=crop"
-        ]
-      },
-      {
-        "name": "Visit Mudchute Park",
-        "startTime": "20-May-2021 15:00",
-        "endTime": "20-May-2021 17:00",
-        "place": {
-          "name": "Mudchute Park",
-          "address": "Pier St, London E14 3HP",
-          "postCode": "E14 3HP",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["outdoor", "london", "party", "outdoor", "london", "party"],
-        "imageUrls": [
-          "https://www.mudchute.org/blog/wp-content/uploads/mudchute-7768-1024x682.jpg",
-          "https://canary.life/wp-content/uploads/2019/12/Visit-Mudchute-Park-and-Farm-2.jpg"
-        ]
-      },
-      {
-        "name": "Dinner at Six by Nico",
-        "startTime": "20-May-2021 20:00",
-        "endTime": "20-May-2021 20:00",
-        "place": {
-          "name": "Six by Nico",
-          "address": "Chancellor Passage, London E14 5EA",
-          "postCode": "E14 5EA",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["shopping", "date", "food"],
-        "imageUrls": [
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-menu_10082021084839.jpg?w=928&h=522&fit=crop",
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-opening-times_10082021084847.jpg?w=928&h=522&fit=crop"
-        ]
-      },
-      {
-        "name": "Visit Mudchute Park",
-        "startTime": "20-May-2021 15:00",
-        "endTime": "20-May-2021 17:00",
-        "place": {
-          "name": "Mudchute Park",
-          "address": "Pier St, London E14 3HP",
-          "postCode": "E14 3HP",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["outdoor", "london", "party", "outdoor", "london", "party"],
-        "imageUrls": [
-          "https://www.mudchute.org/blog/wp-content/uploads/mudchute-7768-1024x682.jpg",
-          "https://canary.life/wp-content/uploads/2019/12/Visit-Mudchute-Park-and-Farm-2.jpg"
-        ]
-      },
-      {
-        "name": "Dinner at Six by Nico",
-        "startTime": "20-May-2021 20:00",
-        "endTime": "20-May-2021 20:00",
-        "place": {
-          "name": "Six by Nico",
-          "address": "Chancellor Passage, London E14 5EA",
-          "postCode": "E14 5EA",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["shopping", "date", "food"],
-        "imageUrls": [
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-menu_10082021084839.jpg?w=928&h=522&fit=crop",
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-opening-times_10082021084847.jpg?w=928&h=522&fit=crop"
+          "https://media-cdn.tripadvisor.com/media/photo-s/05/3a/63/d9/gold-mine.jpg"
         ]
       }
     ],
@@ -278,126 +182,30 @@
     ]
   },
   {
-    "uuid": "2",
+    "uuid": "3",
     "createdBy": "Christofel",
     "createdDate": "20-May-2021 12:00",
     "lastModifedBy": null,
     "lastModifiedDate": null,
     "name": "Explore Greenich Park",
-    "score": null,
+    "score": 4.5,
     "activities": [
       {
-        "name": "Visit Mudchute Park",
+        "name": "Visit Prime Meridian",
         "startTime": "20-May-2021 15:00",
         "endTime": "20-May-2021 17:00",
         "place": {
-          "name": "Mudchute Park",
-          "address": "Pier St, London E14 3HP",
-          "postCode": "E14 3HP",
+          "name": "The Meridian Line - Greenwich Park",
+          "address": "Royal Observatory, Blackheath Ave, London SE10 8XJ",
+          "postCode": "SE10 8XJ",
           "city": {
             "name": "London",
             "country": "United Kingdom"
           }
         },
-        "tags": ["outdoor", "london", "party", "outdoor", "london", "party"],
+        "tags": ["outdoor", "park"],
         "imageUrls": [
-          "https://www.mudchute.org/blog/wp-content/uploads/mudchute-7768-1024x682.jpg",
-          "https://canary.life/wp-content/uploads/2019/12/Visit-Mudchute-Park-and-Farm-2.jpg"
-        ]
-      },
-      {
-        "name": "Dinner at Six by Nico",
-        "startTime": "20-May-2021 20:00",
-        "endTime": "20-May-2021 20:00",
-        "place": {
-          "name": "Six by Nico",
-          "address": "Chancellor Passage, London E14 5EA",
-          "postCode": "E14 5EA",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["shopping", "date", "food"],
-        "imageUrls": [
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-menu_10082021084839.jpg?w=928&h=522&fit=crop",
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-opening-times_10082021084847.jpg?w=928&h=522&fit=crop"
-        ]
-      },
-      {
-        "name": "Visit Mudchute Park",
-        "startTime": "20-May-2021 15:00",
-        "endTime": "20-May-2021 17:00",
-        "place": {
-          "name": "Mudchute Park",
-          "address": "Pier St, London E14 3HP",
-          "postCode": "E14 3HP",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["outdoor", "london", "party", "outdoor", "london", "party"],
-        "imageUrls": [
-          "https://www.mudchute.org/blog/wp-content/uploads/mudchute-7768-1024x682.jpg",
-          "https://canary.life/wp-content/uploads/2019/12/Visit-Mudchute-Park-and-Farm-2.jpg"
-        ]
-      },
-      {
-        "name": "Dinner at Six by Nico",
-        "startTime": "20-May-2021 20:00",
-        "endTime": "20-May-2021 20:00",
-        "place": {
-          "name": "Six by Nico",
-          "address": "Chancellor Passage, London E14 5EA",
-          "postCode": "E14 5EA",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["shopping", "date", "food"],
-        "imageUrls": [
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-menu_10082021084839.jpg?w=928&h=522&fit=crop",
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-opening-times_10082021084847.jpg?w=928&h=522&fit=crop"
-        ]
-      },
-      {
-        "name": "Visit Mudchute Park",
-        "startTime": "20-May-2021 15:00",
-        "endTime": "20-May-2021 17:00",
-        "place": {
-          "name": "Mudchute Park",
-          "address": "Pier St, London E14 3HP",
-          "postCode": "E14 3HP",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["outdoor", "london", "party", "outdoor", "london", "party"],
-        "imageUrls": [
-          "https://www.mudchute.org/blog/wp-content/uploads/mudchute-7768-1024x682.jpg",
-          "https://canary.life/wp-content/uploads/2019/12/Visit-Mudchute-Park-and-Farm-2.jpg"
-        ]
-      },
-      {
-        "name": "Dinner at Six by Nico",
-        "startTime": "20-May-2021 20:00",
-        "endTime": "20-May-2021 20:00",
-        "place": {
-          "name": "Six by Nico",
-          "address": "Chancellor Passage, London E14 5EA",
-          "postCode": "E14 5EA",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["shopping", "date", "food"],
-        "imageUrls": [
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-menu_10082021084839.jpg?w=928&h=522&fit=crop",
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-opening-times_10082021084847.jpg?w=928&h=522&fit=crop"
+          "https://www.visitgreenwich.org.uk/imageresizer/?image=%2Fdmsimgs%2FS9533-012_882153263.jpg&action=ProductDetailProFullWidth"
         ]
       }
     ],
@@ -414,145 +222,6 @@
     "userId": "hakimchr",
     "imageUrls": [
       "https://www.royalparks.org.uk/parks/greenwich-park/food-and-drink/the-pavilion-cafe/_gallery/The-Pavilion-Cafe.jpg/w_1200.jpg"
-    ]
-  },
-  {
-    "uuid": "2",
-    "createdBy": "Christofel",
-    "createdDate": "20-May-2021 12:00",
-    "lastModifedBy": null,
-    "lastModifiedDate": null,
-    "name": "Weekend @ Canary Wharf",
-    "score": null,
-    "activities": [
-      {
-        "name": "Visit Mudchute Park",
-        "startTime": "20-May-2021 15:00",
-        "endTime": "20-May-2021 17:00",
-        "place": {
-          "name": "Mudchute Park",
-          "address": "Pier St, London E14 3HP",
-          "postCode": "E14 3HP",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["outdoor", "london", "party", "outdoor", "london", "party"],
-        "imageUrls": [
-          "https://www.mudchute.org/blog/wp-content/uploads/mudchute-7768-1024x682.jpg",
-          "https://canary.life/wp-content/uploads/2019/12/Visit-Mudchute-Park-and-Farm-2.jpg"
-        ]
-      },
-      {
-        "name": "Dinner at Six by Nico",
-        "startTime": "20-May-2021 20:00",
-        "endTime": "20-May-2021 20:00",
-        "place": {
-          "name": "Six by Nico",
-          "address": "Chancellor Passage, London E14 5EA",
-          "postCode": "E14 5EA",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["shopping", "date", "food"],
-        "imageUrls": [
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-menu_10082021084839.jpg?w=928&h=522&fit=crop",
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-opening-times_10082021084847.jpg?w=928&h=522&fit=crop"
-        ]
-      },
-      {
-        "name": "Visit Mudchute Park",
-        "startTime": "20-May-2021 15:00",
-        "endTime": "20-May-2021 17:00",
-        "place": {
-          "name": "Mudchute Park",
-          "address": "Pier St, London E14 3HP",
-          "postCode": "E14 3HP",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["outdoor", "london", "party", "outdoor", "london", "party"],
-        "imageUrls": [
-          "https://www.mudchute.org/blog/wp-content/uploads/mudchute-7768-1024x682.jpg",
-          "https://canary.life/wp-content/uploads/2019/12/Visit-Mudchute-Park-and-Farm-2.jpg"
-        ]
-      },
-      {
-        "name": "Dinner at Six by Nico",
-        "startTime": "20-May-2021 20:00",
-        "endTime": "20-May-2021 20:00",
-        "place": {
-          "name": "Six by Nico",
-          "address": "Chancellor Passage, London E14 5EA",
-          "postCode": "E14 5EA",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["shopping", "date", "food"],
-        "imageUrls": [
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-menu_10082021084839.jpg?w=928&h=522&fit=crop",
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-opening-times_10082021084847.jpg?w=928&h=522&fit=crop"
-        ]
-      },
-      {
-        "name": "Visit Mudchute Park",
-        "startTime": "20-May-2021 15:00",
-        "endTime": "20-May-2021 17:00",
-        "place": {
-          "name": "Mudchute Park",
-          "address": "Pier St, London E14 3HP",
-          "postCode": "E14 3HP",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["outdoor", "london", "party", "outdoor", "london", "party"],
-        "imageUrls": [
-          "https://www.mudchute.org/blog/wp-content/uploads/mudchute-7768-1024x682.jpg",
-          "https://canary.life/wp-content/uploads/2019/12/Visit-Mudchute-Park-and-Farm-2.jpg"
-        ]
-      },
-      {
-        "name": "Dinner at Six by Nico",
-        "startTime": "20-May-2021 20:00",
-        "endTime": "20-May-2021 20:00",
-        "place": {
-          "name": "Six by Nico",
-          "address": "Chancellor Passage, London E14 5EA",
-          "postCode": "E14 5EA",
-          "city": {
-            "name": "London",
-            "country": "United Kingdom"
-          }
-        },
-        "tags": ["shopping", "date", "food"],
-        "imageUrls": [
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-menu_10082021084839.jpg?w=928&h=522&fit=crop",
-          "https://images.squaremeal.co.uk/cloud/restaurants/19908/images/six-by-nico-canary-wharf-opening-times_10082021084847.jpg?w=928&h=522&fit=crop"
-        ]
-      }
-    ],
-    "city": {
-      "name": "London",
-      "country": "United Kingdom"
-    },
-    "estimatedBudget": {
-      "value": 300,
-      "currency": "GBP"
-    },
-    "description": "Over 300 shops, cafes, bars and restaurants, a year-round events programme, one of London's biggest roof gardens and an award-winning,",
-    "tags": [],
-    "userId": "hakimchr",
-    "imageUrls": [
-      "https://residential.canarywharf.com/wp-content/uploads/2017/03/20-1030x687.jpg"
     ]
   }
 ]

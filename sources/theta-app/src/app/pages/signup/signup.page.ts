@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '@theta/models/user';
 import { AppService } from '@theta/services/app.service';
 import { UserService } from '@theta/services/user.service';
+import { Apollo } from 'apollo-angular';
 
 @Component({
   selector: 'app-signup',

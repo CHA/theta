@@ -34,20 +34,23 @@
       <ion-col>
         <p class="title title-main">For you</p>
         <div class="card-effect">
-          <app-card-slider [cards]="recommendations" [config]="swiper.cardEffectSwiperOptions"></app-card-slider>
+          <app-card-slider [cards]="recommendations" [config]="swiper.cardEffectSwiperOptions"
+            (tap)="onCardTap($event)"></app-card-slider>
         </div>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <p class="title">Popular</p>
-        <app-card-slider [cards]="topPicks" [config]="swiper.freeModeSwiperOptions"></app-card-slider>
+        <app-card-slider [cards]="topPicks" [config]="swiper.freeModeSwiperOptions" (tap)="onCardTap($event)">
+        </app-card-slider>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <p class="title">Near you</p>
-        <app-card-slider [cards]="recommendations" [config]="swiper.freeModeSwiperOptions"></app-card-slider>
+        <app-card-slider [cards]="recommendations" [config]="swiper.freeModeSwiperOptions" (tap)="onCardTap($event)">
+        </app-card-slider>
       </ion-col>
     </ion-row>
   </ion-grid>

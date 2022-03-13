@@ -48,6 +48,10 @@ export class HomePage implements OnInit {
     event.target.complete();
   }
 
+  onCardTap(event: Card) {
+    this.app.navigateTo(`/itinerary/${event.id}`);
+  }
+
   login() {
     this.app.toLoginPage();
   }
