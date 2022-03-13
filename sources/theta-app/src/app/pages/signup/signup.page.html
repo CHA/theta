@@ -11,7 +11,7 @@
   <div class="login-logo">
     <img src="assets/images/theta-logo.png" alt="Theta logo">
   </div>
-  <h1 class="ion-padding" color="primary">Create your account</h1>
+  <h1 class="ion-padding-start" color="primary">Create your account</h1>
   <form *ngIf="signupForm" [formGroup]="signupForm" (ngSubmit)="signup()">
     <ion-list>
       <ion-item>
@@ -22,10 +22,10 @@
 
       <ion-text color="danger" *ngIf="formControls.email.invalid && 
           (formControls.email.dirty || formControls.email.touched)">
-        <p class="ion-padding-start" *ngIf="formControls.email.errors?.required">
-          *required
+        <p class="ion-padding-start validation-error" *ngIf="formControls.email.errors?.required">
+          This field is required
         </p>
-        <p class="ion-padding-start" *ngIf="formControls.email.invalid">
+        <p class="ion-padding-start validation-error" *ngIf="formControls.email.invalid">
           Invalid email address
         </p>
       </ion-text>
@@ -38,8 +38,8 @@
 
       <ion-text color="danger" *ngIf="formControls.firstName.errors?.required &&  
         (formControls.firstName.dirty || formControls.firstName.touched)">
-        <p class="ion-padding-start">
-          *required
+        <p class="ion-padding-start validation-error">
+          This field is required
         </p>
       </ion-text>
 
@@ -51,8 +51,8 @@
 
       <ion-text color="danger" *ngIf="formControls.lastName.errors?.required &&
         (formControls.lastName.dirty || formControls.lastName.touched)">
-        <p class="ion-padding-start">
-          *required
+        <p class="ion-padding-start validation-error">
+          This field is required
         </p>
       </ion-text>
 
@@ -64,8 +64,8 @@
 
       <ion-text color="danger" *ngIf="formControls.password.errors?.required &&
         (formControls.password.dirty || formControls.password.touched)">
-        <p class="ion-padding-start">
-          *required
+        <p class="ion-padding-start validation-error">
+          This field is required
         </p>
       </ion-text>
 
@@ -77,7 +77,7 @@
 
       <ion-text color="danger" *ngIf="formControls.password.value !== formControls.confirmPassword.value &&
         (formControls.confirmPassword.dirty || formControls.confirmPassword.touched)">
-        <p class="ion-padding-start">
+        <p class="ion-padding-start validation-error">
           Password doesn't match
         </p>
       </ion-text>
@@ -85,7 +85,10 @@
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" expand="block" [disabled]="!signupForm.valid">Register</ion-button>
+        <ion-button type="submit" expand="block" [disabled]="!signupForm.valid || loading">
+          <span *ngIf="!loading">Register</span>
+          <span *ngIf="loading">Please wait...</span>
+        </ion-button>
       </ion-col>
     </ion-row>
   </form>

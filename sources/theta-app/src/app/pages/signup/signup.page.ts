@@ -11,7 +11,7 @@ import { Apollo } from 'apollo-angular';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
-  submitted = false;
+  loading = false;
 
   signupForm = new FormGroup({
     email: new FormControl('', Validators.email),
@@ -32,15 +32,19 @@ export class SignupPage implements OnInit {
   }
 
   async signup() {
-    this.submitted = true;
-    const user: User = {
-      email: this.signupForm.controls.email.value,
-      firstName: this.signupForm.controls.firstName.value,
-      lastName: this.signupForm.controls.lastName?.value,
-      password: this.signupForm.controls.password.value
-    };
-    await this.userService.signup(user);
-    this.app.navigateToTab('home');
+    try {
+      this.loading = true;
+      const user: User = {
+        email: this.signupForm.controls.email.value,
+        firstName: this.signupForm.controls.firstName.value,
+        lastName: this.signupForm.controls.lastName?.value,
+        password: this.signupForm.controls.password.value
+      };
+      await this.userService.signup(user);
+      this.app.navigateToTab('home');
+    } finally {
+      this.loading = false;
+    }
   }
 
   login() {

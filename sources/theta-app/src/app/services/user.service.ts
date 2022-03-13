@@ -40,12 +40,15 @@ export class UserService {
         userInput: user
       }
     }).toPromise();
-    this.localStorageService.set(CacheKey.user, result);
+    result.data.profilePicUrl = `${this.app.avatarsPath}/default.png`;
+    this.localStorageService.set(CacheKey.user, result.data);
     return result;
   }
 
-  async logout(user: User): Promise<User> {
+  logout() {
     this.localStorageService.remove(CacheKey.user);
+    this.app.toHome();
+    this.app.refresh();
     return null;
   }
 
