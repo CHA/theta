@@ -21,11 +21,11 @@ export class AppComponent implements OnInit {
     private menuController: MenuController,
     private router: Router
   ) {
-    this.router.events.subscribe(() => this.user = this.userService.user);
+    this.router.events.subscribe(() => this.user = this.userService.userToken?.user);
   }
 
   ngOnInit(): void {
-    this.user = this.userService.user;
+    this.user = this.userService.userToken.user;
   }
 
   viewProfile() {

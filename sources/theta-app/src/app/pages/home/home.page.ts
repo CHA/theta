@@ -33,7 +33,7 @@ export class HomePage implements OnInit {
     private menuController: MenuController
   ) {
     this.route.params.subscribe(() => {
-      this.user = this.userService.user;
+      this.user = this.userService.userToken?.user;
     });
   }
 

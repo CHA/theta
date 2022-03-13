@@ -10,7 +10,7 @@ import { UserService } from '@theta/services/user.service';
 })
 export class LoginPage implements OnInit {
 
-  submitted = false;
+  loading = false;
   loginFailed = false;
 
   loginForm = new FormGroup({
@@ -29,14 +29,16 @@ export class LoginPage implements OnInit {
   }
 
   async submit() {
-    this.submitted = true;
+    this.loading = true;
     const username = this.loginForm.controls.username.value;
     const password = this.loginForm.controls.password.value;
-    const token = await this.userService.login(username, password);
-    if(token) {
+    try {
+      await this.userService.login(username, password);
       this.app.toHome();
-    } else {
+    } catch {
       this.loginFailed = true;
+    } finally {
+      this.loading = false;
     }
   }
 
