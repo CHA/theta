@@ -1,14 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnChanges {
 
-  constructor() { }
+  @Input() lat: number;
+  @Input() lng: number;
+  apiLoaded: Observable<boolean>;
+  center: google.maps.LatLngLiteral;
 
-  ngOnInit() {}
+  constructor() {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    const lat = changes.lat?.currentValue;
+    const lng = changes.lng?.currentValue;
+    if (lat && lng) {
+      this.center = { lat, lng };
+    }
+  }
 
 }

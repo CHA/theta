@@ -60,4 +60,8 @@ export class HomePage implements OnInit {
     this.menuController.open();
   }
 
+  toMap() {
+    this.app.navigateTo('/map');
+  }
+
 }

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GoogleMapsModule } from '@angular/google-maps';
 import { IonicModule } from '@ionic/angular';
 import { SwiperModule } from 'swiper/angular';
 
@@ -15,6 +16,7 @@ import { TimelineComponent } from './timeline/timeline.component';
     imports: [
         CommonModule,
         FormsModule,
+        GoogleMapsModule,
         IonicModule,
         ReactiveFormsModule,
         SwiperModule

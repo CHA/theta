@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  graphqlApiUrl: `http://localhost:3000/graphql`
+  graphqlApiUrl: `http://localhost:3000/graphql`,
+  googleMapApiUrl: `https://maps.googleapis.com/maps/api/js?key=AIzaSyDor0QhIJEo6rvxjvQL2FGpzX4UNbHRbTs`
 };
 
 /*
