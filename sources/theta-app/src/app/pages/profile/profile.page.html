@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons *ngIf="user" slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" ios="share-outline" md="share-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="user">
+  <ion-header>
+    <ion-toolbar translucent>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/tabs/speakers"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="profile-background">
+    <img [src]="user?.profilePicUrl" [alt]="user?.firstName">
+    <h2>{{user?.firstName}} {{user?.lastName}}</h2>
+    <ion-note>
+      Local Guide, Manado, {{emoji.indonesia}}
+    </ion-note>
+    <div>
+      <span> {{emoji.star}} 4.5</span>
+    </div>
+    <div>
+      <ion-button size="small" fill="clear">23 Followers</ion-button>
+      <ion-button size="small" fill="clear">29 Following</ion-button>
+    </div>
+  </div>
+
+  <ion-segment [value]="profileTabEnum.itineraries" (ionChange)="selectTab($event)">
+    <ion-segment-button [value]="profileTabEnum.itineraries">
+      <ion-label>Your itineraries</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [value]="profileTabEnum.favourites">
+      <ion-label>Favourites</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="selectedTab">
+    <ion-list *ngSwitchCase="profileTabEnum.itineraries">
+      <ion-item *ngFor="let itinerary of favItineraries">
+        <ion-thumbnail slot="start">
+          <img [src]="itinerary.imageUrls[0]" />
+        </ion-thumbnail>
+        <ion-label>
+          <h3>{{itinerary.name}}</h3>
+          <p>{{itinerary.description}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="profileTabEnum.favourites">
+      <ion-item *ngFor="let itinerary of favItineraries">
+        <ion-thumbnail slot="start">
+          <img [src]="itinerary.imageUrls[0]" />
+        </ion-thumbnail>
+        <ion-label>
+          <h3>{{itinerary.name}}</h3>
+          <p>{{itinerary.description}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

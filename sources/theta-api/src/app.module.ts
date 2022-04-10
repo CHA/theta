@@ -8,6 +8,10 @@ import { Neo4jConfigService } from './config/database/neo4j/neo4j-config.service
 import { ItinerariesModule } from './entities/itineraries/itineraries.module';
 import { UsersModule } from './entities/users/users.module';
 import { Neo4jModule } from './database/neo4j/neo4j.module';
+import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './entities/auth/auth.module';
+import { AwsConfigModule } from './config/aws/aws-config.module';
+import { FileModule } from './entities/file/file.module';
 
 @Module({
   imports: [
@@ -28,10 +32,17 @@ import { Neo4jModule } from './database/neo4j/neo4j.module';
       playground: true,
       autoSchemaFile: join(process.cwd(), 'src/graph/schema.gql'),
       sortSchema: true,
+      buildSchemaOptions: {
+        dateScalarMode: 'timestamp',
+      },
     }),
     AppConfigModule,
+    AwsConfigModule,
+    AuthModule,
     ItinerariesModule,
+    SharedModule,
     UsersModule,
+    FileModule,
   ],
   controllers: [],
   providers: [],

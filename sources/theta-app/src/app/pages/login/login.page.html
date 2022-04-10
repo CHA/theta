@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login Theta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="login-logo">
+    <img src="assets/images/theta-logo.png" alt="Theta logo">
+  </div>
+
+
+  <form *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="submit()" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating" color="primary">Username</ion-label>
+        <ion-input #username formControlName="username" type="text" autocapitalize="off" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger" *ngIf="submitted && formControls.username.errors?.required">
+        <p class="ion-padding-start">
+          Username is required
+        </p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating" color="primary">Password</ion-label>
+        <ion-input #password formControlName="password" type="password" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger" *ngIf="submitted && formControls.password.errors?.required">
+        <p class="ion-padding-start">
+          Password is required
+        </p>
+      </ion-text>
+    </ion-list>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" expand="block" [disabled]="!loginForm.valid || loading">
+          <span *ngIf="!loading">Login</span>
+          <span *ngIf="loading">Logging in....</span>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="light" expand="block" (click)="signup()">Signup</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+  <div *ngIf="loginFailed">
+    <ion-text color="danger">
+      <p class="ion-padding-start">
+        Invalid username or password. Please try again.
+      </p>
+    </ion-text>
+  </div>
+</ion-content>

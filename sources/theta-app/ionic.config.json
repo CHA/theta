@@ -1,7 +1,7 @@
 {
-  "name": "ionic-conference-app",
-  "type": "angular",
+  "name": "theta-app",
   "integrations": {
-    "cordova": {}
-  }
+    "capacitor": {}
+  },
+  "type": "angular"
 }

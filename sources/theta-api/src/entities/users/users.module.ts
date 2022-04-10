@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
+import { SharedModule } from '@theta/shared/shared.module';
 import { SocialResolver } from './social.resolver';
 import { SocialService } from './social.service';
 import { UsersResolver } from './users.resolver';
-import { UserService } from './users.service';
+import { UsersService } from './users.service';
 
 @Module({
-  providers: [SocialResolver, SocialService, UsersResolver, UserService],
+  imports: [SharedModule],
+  providers: [SocialResolver, SocialService, UsersResolver, UsersService],
+  exports: [UsersService],
 })
 export class UsersModule {}

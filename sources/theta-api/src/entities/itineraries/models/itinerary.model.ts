@@ -1,29 +1,29 @@
-import { Field, GraphQLISODateTime, Int, ObjectType } from '@nestjs/graphql';
+import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { Activity } from '@theta/entities/activities/models/activity.model';
+import { City } from '@theta/entities/places/models/city.model';
+import { BaseModel } from '@theta/entities/shared/models/base.model';
+import { Price } from './price.model';
 
 @ObjectType({ description: 'Itinerary model' })
-export class Itinerary {
-  @Field((type) => Int)
-  id: number;
-
+export class Itinerary extends BaseModel {
   @Field()
   name: string;
 
-  @Field((type) => Int, { nullable: true })
+  @Field(() => Int, { nullable: true })
   score: number;
 
-  @Field((type) => [Activity])
+  @Field(() => [Activity])
   activities: Activity[];
 
-  @Field()
-  createdBy: string;
+  @Field(() => [City])
+  city: City;
 
-  @Field((type) => GraphQLISODateTime)
-  createdDate: Date;
+  @Field(() => [Price], { nullable: true })
+  estimatedBudget: Price;
 
-  @Field((type) => String, { nullable: true })
-  lastModifiedBy: string;
+  @Field(() => [String], { nullable: true })
+  imageUrls: string[];
 
-  @Field((type) => GraphQLISODateTime, { nullable: true })
-  lastModifiedDate: Date;
+  @Field(() => [String], { nullable: true })
+  description: string;
 }

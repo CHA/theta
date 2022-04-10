@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { SharedModule } from '@theta/shared/shared.module';
 
-import { MapPage } from './map';
+import { MapPage } from './map.page';
 
 const routes: Routes = [
   {
@@ -11,7 +12,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forChild(routes),
+    SharedModule,
+  ],
+  exports: [
+    RouterModule
+  ],
 })
-export class MapPageRoutingModule { }
+export class MapPageRoutingModule {}

@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPage } from './login';
 import { LoginPageRoutingModule } from './login-routing.module';
+
+import { LoginPage } from './login.page';
+import { SharedModule } from '@theta/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule
+    LoginPageRoutingModule,
+    SharedModule
   ],
-  declarations: [
-    LoginPage,
-  ]
+  declarations: [LoginPage]
 })
-export class LoginModule { }
+export class LoginPageModule {}

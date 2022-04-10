@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-import { BrowseComponent } from './browse.component';
+import { BrowsePage } from './browse.page';
+
 const routes: Routes = [
   {
     path: '',
-    component: BrowseComponent
+    component: BrowsePage
   }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes)
-  ],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class BrowseRoutingModule {}
+export class BrowsePageRoutingModule {}

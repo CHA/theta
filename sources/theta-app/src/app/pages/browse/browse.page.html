@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Browse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Browse</ion-title>
+      <ion-buttons slot="end">
+        <ion-button class="ion-padding-end">
+          <ion-icon name="heart"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <div>
+    <ion-searchbar placeholder="Search by destinations or budget"></ion-searchbar>
+  </div>
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let category of categories">
+        <div class="col-wrapper category-title" [style.background-image]="'url(' + category.imageUrl + ')'">
+          {{category.name}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list *ngIf="recentlyViewed">
+    <ion-list-header> Recently Viewed </ion-list-header>
+    <ion-item *ngFor="let itinerary of recentlyViewed">
+      <ion-thumbnail slot="end">
+        <img [src]="itinerary.imageUrls[0]" />
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{itinerary.name}}</h3>
+        <p>{{itinerary.description}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
