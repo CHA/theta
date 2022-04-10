@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { User } from './models/user';
 import { AppService } from './services/app.service';
@@ -17,11 +18,14 @@ export class AppComponent implements OnInit {
   constructor(
     public app: AppService,
     private userService: UserService,
-    private menuController: MenuController
-  ) { }
+    private menuController: MenuController,
+    private router: Router
+  ) {
+    this.router.events.subscribe(() => this.user = this.userService.userToken?.user);
+  }
 
   ngOnInit(): void {
-    this.user = this.userService.user;
+    this.user = this.userService.userToken.user;
   }
 
   viewProfile() {
@@ -29,8 +33,8 @@ export class AppComponent implements OnInit {
     this.menuController.close();
   }
 
-  async signout() {
-    this.user = await this.userService.logout(this.user);
+  signout() {
+    this.user = this.userService.logout();
   }
 
 }

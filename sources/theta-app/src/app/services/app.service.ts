@@ -69,4 +69,8 @@ export class AppService {
     this.location.back();
   }
 
+  refresh() {
+    window.location.reload();
+  }
+
 }

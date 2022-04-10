@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  graphqlApiUrl: `http://localhost:3000/graphql`,
+  googleMapApiUrl: `https://maps.googleapis.com/maps/api/js?key=AIzaSyDor0QhIJEo6rvxjvQL2FGpzX4UNbHRbTs`
 };
 
 /*

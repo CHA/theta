@@ -31,7 +31,7 @@ export class ProfilePage implements OnInit {
 
   async ngOnInit() {
     this.favItineraries = await this.itineraryService.search(null);
-    this.user = this.userService.user;
+    this.user = this.userService.userToken.user;
   }
 
   selectTab(event) {

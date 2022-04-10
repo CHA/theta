@@ -12,13 +12,7 @@
     <img src="assets/images/theta-logo.png" alt="Theta logo">
   </div>
 
-  <div *ngIf="loginFailed">
-    <ion-text color="danger">
-      <p class="ion-padding-start">
-        Invalid username or password. Please try again.
-      </p>
-    </ion-text>
-  </div>
+
   <form *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="submit()" novalidate>
     <ion-list>
       <ion-item>
@@ -48,11 +42,22 @@
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" expand="block" [disabled]="!loginForm.valid">Login</ion-button>
+        <ion-button type="submit" expand="block" [disabled]="!loginForm.valid || loading">
+          <span *ngIf="!loading">Login</span>
+          <span *ngIf="loading">Logging in....</span>
+        </ion-button>
       </ion-col>
       <ion-col>
         <ion-button color="light" expand="block" (click)="signup()">Signup</ion-button>
       </ion-col>
     </ion-row>
   </form>
+
+  <div *ngIf="loginFailed">
+    <ion-text color="danger">
+      <p class="ion-padding-start">
+        Invalid username or password. Please try again.
+      </p>
+    </ion-text>
+  </div>
 </ion-content>

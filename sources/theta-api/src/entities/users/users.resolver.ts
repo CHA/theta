@@ -5,34 +5,34 @@ import { UserInput } from './models/user.input';
 import { User } from './models/user.model';
 import { UsersService } from './users.service';
 
-@Resolver((of) => User)
+@Resolver(() => User)
 export class UsersResolver {
   constructor(private readonly usersService: UsersService) {}
 
-  @Mutation((returns) => User)
+  @Mutation(() => User)
   async createUser(@Args('user') user: UserInput): Promise<User> {
     return await this.usersService.create(user);
   }
 
   @UseGuards(GqlAuthGuard)
-  @Mutation((returns) => String)
+  @Mutation(() => String)
   async deleteUser(@Args('id') id: string): Promise<string> {
     return await this.usersService.delete(id);
   }
 
   @UseGuards(GqlAuthGuard)
-  @Query((returns) => User)
+  @Query(() => User)
   async getUser(@Args('id') id: string): Promise<User> {
     return await this.usersService.get(id);
   }
 
   @UseGuards(GqlAuthGuard)
-  @Query((returns) => [User])
+  @Query(() => [User])
   async searchUsers(@Args('keyword') keyword: string): Promise<User[]> {
     return await this.usersService.search(keyword);
   }
 
-  @Query((returns) => String)
+  @Query(() => String)
   async countUser(): Promise<number> {
     return await this.usersService.count();
   }

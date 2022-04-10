@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ViewDidEnter } from '@ionic/angular';
 import { Itinerary } from '@theta/models/itinerary';
+import { AppService } from '@theta/services/app.service';
 import { ItineraryService } from '@theta/services/itinerary.service';
 import { LoaderService } from '@theta/services/loader.service';
 import { Emoji } from '@theta/shared/emojis';
@@ -19,14 +20,13 @@ export class ItineraryPage implements OnInit {
   imageSlides: ImageSlide[] = [];
   selectedTab = ItineraryTab.activities;
   itineraryTabEnum = ItineraryTab;
-  score = 4.5;
   emojiEnum = Emoji;
   liked: boolean;
 
   constructor(
+    private app: AppService,
     private route: ActivatedRoute,
-    private itineraryService: ItineraryService,
-    private loaderService: LoaderService
+    private itineraryService: ItineraryService
   ) { }
 
 
@@ -54,5 +54,8 @@ export class ItineraryPage implements OnInit {
     this.liked = !this.liked;
   }
 
+  back() {
+    this.app.toHome();
+  }
 
 }

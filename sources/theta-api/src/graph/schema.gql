@@ -50,8 +50,11 @@ scalar Date
 """Itinerary model"""
 type Itinerary {
   activities: [Activity!]!
+  city: [City!]!
   createdBy: String!
   createdDate: Date!
+  description: [String!]
+  estimatedBudget: [Price!]
   imageUrls: [String!]
   lastModifiedBy: String
   lastModifiedDate: Date
@@ -63,6 +66,7 @@ type Itinerary {
 input ItineraryInput {
   activities: [ActivityInput!]
   createdBy: String!
+  description: [String!]
   imageUrls: [String!]
   name: String!
 }
@@ -73,6 +77,7 @@ type Mutation {
   deleteUser(id: String!): String!
   follows(usernameA: String!, usernameB: String!): [User!]!
   login(input: AuthLoginInput!): UserToken!
+  uploadFile(file: Upload!): UploadedFileResponse!
 }
 
 type Place {
@@ -96,6 +101,12 @@ input PlaceInput {
   tags: [String!]
 }
 
+"""Price model"""
+type Price {
+  amount: [Float!]!
+  currency: [String!]!
+}
+
 type Query {
   countUser: String!
   getFollowers(username: String!): [User!]!
@@ -109,8 +120,20 @@ input SearchItineraryInput {
   keyword: String!
 }
 
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+"""Uploaded file response"""
+type UploadedFileResponse {
+  encoding: String!
+  filename: String!
+  mimetype: String!
+  url: String!
+}
+
 """User model"""
 type User {
+  badge: [String!]
   createdBy: String!
   createdDate: Date!
   email: String!
@@ -121,6 +144,7 @@ type User {
   lastModifiedDate: Date
   lastName: String
   phoneNumber: String
+  profilePhotoUrl: [String!]
   uuid: String!
 }
 

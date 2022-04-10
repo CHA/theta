@@ -26,6 +26,7 @@ export class ItineraryService {
     const cards: Card[] = [];
     itineraries.forEach(i => {
       cards.push({
+        id: i.uuid,
         imageUrls: [i.imageUrls[0]],
         title: i.name,
         text: i.description
@@ -33,5 +34,4 @@ export class ItineraryService {
     });
     return cards;
   }
-
 }

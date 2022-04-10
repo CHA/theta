@@ -33,7 +33,7 @@ export class HomePage implements OnInit {
     private menuController: MenuController
   ) {
     this.route.params.subscribe(() => {
-      this.user = this.userService.user;
+      this.user = this.userService.userToken?.user;
     });
   }
 
@@ -48,12 +48,20 @@ export class HomePage implements OnInit {
     event.target.complete();
   }
 
+  onCardTap(event: Card) {
+    this.app.navigateTo(`/itinerary/${event.id}`);
+  }
+
   login() {
     this.app.toLoginPage();
   }
 
   openMenu() {
     this.menuController.open();
+  }
+
+  toMap() {
+    this.app.navigateTo('/map');
   }
 
 }
