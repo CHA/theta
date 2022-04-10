@@ -4,11 +4,11 @@ import { AuthService } from './auth.service';
 import { AuthLoginInput } from './models/auth-login.input';
 import { UserToken } from './models/user-token.model';
 
-@Resolver((of) => User)
+@Resolver(() => User)
 export class AuthResolver {
   constructor(private readonly authService: AuthService) {}
 
-  @Mutation((returns) => UserToken)
+  @Mutation(() => UserToken)
   async login(
     @Args({ name: 'input', type: () => AuthLoginInput }) input: AuthLoginInput,
   ): Promise<UserToken> {

@@ -11,12 +11,12 @@ export class ItinerariesResolver {
   constructor(private readonly itineraryService: ItinerariesService) {}
 
   @UseGuards(GqlAuthGuard)
-  @Mutation((returns) => Itinerary)
+  @Mutation(() => Itinerary)
   async createItinerary(@Args('itinerary') itinerary: ItineraryInput) {
     return await this.itineraryService.create(itinerary);
   }
 
-  @Query((returns) => [Itinerary])
+  @Query(() => [Itinerary])
   async searchItinerary(
     @Args('searchItineraryInput') searchItineraryInput: SearchItineraryInput,
   ) {

@@ -10,6 +10,8 @@ import { UsersModule } from './entities/users/users.module';
 import { Neo4jModule } from './database/neo4j/neo4j.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './entities/auth/auth.module';
+import { AwsConfigModule } from './config/aws/aws-config.module';
+import { FileModule } from './entities/file/file.module';
 
 @Module({
   imports: [
@@ -35,10 +37,12 @@ import { AuthModule } from './entities/auth/auth.module';
       },
     }),
     AppConfigModule,
+    AwsConfigModule,
     AuthModule,
     ItinerariesModule,
     SharedModule,
     UsersModule,
+    FileModule,
   ],
   controllers: [],
   providers: [],
