@@ -1,8 +1,8 @@
 {
   "name": "theta-api",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Theta GraphQL API",
+  "author": "Theta, Inc",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
