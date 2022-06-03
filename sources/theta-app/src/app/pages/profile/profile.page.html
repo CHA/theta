@@ -67,6 +67,18 @@
         </ion-label>
       </ion-item>
     </ion-list>
+    <section class="full-width">
+      <ion-button class="btn-create" expand="full" color="primary" (click)="showModal()">
+        Create Itinerary
+      </ion-button>
+    </section>
   </div>
 
 </ion-content>
+
+<ion-modal #createModal>
+  <ng-template>
+    <app-create-itinerary-modal (close)="onClose()" (continue)="onContinue()" [modalRef]="createModal">
+    </app-create-itinerary-modal>
+  </ng-template>
+</ion-modal>

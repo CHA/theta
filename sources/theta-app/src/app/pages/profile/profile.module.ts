@@ -8,6 +8,7 @@ import { ProfilePageRoutingModule } from './profile-routing.module';
 
 import { ProfilePage } from './profile.page';
 import { SharedModule } from '@theta/shared/shared.module';
+import { CreateItineraryModalComponent } from './create-itinerary-modal/create-itinerary-modal.component';
 
 @NgModule({
   imports: [
@@ -15,8 +16,8 @@ import { SharedModule } from '@theta/shared/shared.module';
     FormsModule,
     IonicModule,
     ProfilePageRoutingModule,
-    SharedModule
+    SharedModule,
   ],
-  declarations: [ProfilePage]
+  declarations: [ProfilePage, CreateItineraryModalComponent],
 })
 export class ProfilePageModule {}

@@ -4,53 +4,63 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () =>
+      import('./tabs/tabs.module').then((m) => m.TabsPageModule),
   },
   {
     path: 'browse',
-    loadChildren: () => import('./pages/browse/browse.module').then( m => m.BrowsePageModule)
+    loadChildren: () =>
+      import('./pages/browse/browse.module').then((m) => m.BrowsePageModule),
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomePageModule),
   },
   {
     path: 'profile',
-    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () =>
+      import('./pages/profile/profile.module').then((m) => m.ProfilePageModule),
   },
   {
     path: 'itinerary/:uuid',
-    loadChildren: () => import('./pages/itinerary/itinerary.module').then( m => m.ItineraryPageModule)
+    loadChildren: () =>
+      import('./pages/itinerary/itinerary.module').then(
+        (m) => m.ItineraryPageModule
+      ),
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () =>
+      import('./pages/login/login.module').then((m) => m.LoginPageModule),
   },
   {
     path: 'signup',
-    loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
+    loadChildren: () =>
+      import('./pages/signup/signup.module').then((m) => m.SignupPageModule),
   },
   {
     path: 'settings',
-    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
+    loadChildren: () =>
+      import('./pages/settings/settings.module').then(
+        (m) => m.SettingsPageModule
+      ),
   },
   {
     path: 'wallet',
-    loadChildren: () => import('./pages/wallet/wallet.module').then( m => m.WalletPageModule)
-  },
-  {
-    path: 'plans',
-    loadChildren: () => import('./pages/plans/plans.module').then( m => m.PlansPageModule)
+    loadChildren: () =>
+      import('./pages/wallet/wallet.module').then((m) => m.WalletPageModule),
   },
   {
     path: 'map',
-    loadChildren: () => import('./pages/map/map.module').then( m => m.MapPageModule)
-  }
+    loadChildren: () =>
+      import('./pages/map/map.module').then((m) => m.MapPageModule),
+  },
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

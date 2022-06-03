@@ -9,43 +9,57 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        loadChildren: () => import('../pages/home/home.module').then(m => m.HomePageModule)
+        loadChildren: () =>
+          import('../pages/home/home.module').then((m) => m.HomePageModule),
       },
       {
         path: 'browse',
-        loadChildren: () => import('../pages/browse/browse.module').then(m => m.BrowsePageModule)
+        loadChildren: () =>
+          import('../pages/browse/browse.module').then(
+            (m) => m.BrowsePageModule
+          ),
       },
       {
         path: 'profile',
-        loadChildren: () => import('../pages/profile/profile.module').then(m => m.ProfilePageModule)
+        loadChildren: () =>
+          import('../pages/profile/profile.module').then(
+            (m) => m.ProfilePageModule
+          ),
       },
       {
         path: 'itinerary/:uuid',
-        loadChildren: () => import('../pages/itinerary/itinerary.module').then(m => m.ItineraryPageModule)
-      },
-      {
-        path: 'plans',
-        loadChildren: () => import('../pages/plans/plans.module').then(m => m.PlansPageModule)
+        loadChildren: () =>
+          import('../pages/itinerary/itinerary.module').then(
+            (m) => m.ItineraryPageModule
+          ),
       },
       {
         path: 'wallet',
-        loadChildren: () => import('../pages/wallet/wallet.module').then(m => m.WalletPageModule)
+        loadChildren: () =>
+          import('../pages/wallet/wallet.module').then(
+            (m) => m.WalletPageModule
+          ),
+      },
+      {
+        path: 'plans',
+        redirectTo: '/tabs/profile',
+        pathMatch: 'full',
       },
       {
         path: '',
         redirectTo: '/tabs/home',
-        pathMatch: 'full'
-      }
-    ]
+        pathMatch: 'full',
+      },
+    ],
   },
   {
     path: '',
     redirectTo: '/tabs/home',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class TabsPageRoutingModule { }
+export class TabsPageRoutingModule {}

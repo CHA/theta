@@ -1,0 +1,19 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Create Itinerary</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onClose()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input placeholder="Ex: Weekend in London"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="onContinue()" class="ion-padding" expand="full" color="primary">
+    Create
+  </ion-button>
+</ion-content>

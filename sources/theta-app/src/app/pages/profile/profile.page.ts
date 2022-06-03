@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { Card } from '@theta/models/card';
 import { Itinerary } from '@theta/models/itinerary';
 import { User } from '@theta/models/user';
@@ -7,6 +8,7 @@ import { ItineraryService } from '@theta/services/itinerary.service';
 import { UserService } from '@theta/services/user.service';
 import { FreeModeSwiperOptions } from '@theta/shared/config/swiper-options/free-mode-swiper-options';
 import { Emoji } from '@theta/shared/emojis';
+import { CreateItineraryModalComponent } from './create-itinerary-modal/create-itinerary-modal.component';
 import { ProfileTab } from './profile-tab.enum';
 
 @Component({
@@ -15,19 +17,21 @@ import { ProfileTab } from './profile-tab.enum';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-
+  @ViewChild('#createModal') createModal: ElementRef;
   favItineraries: Itinerary[];
   itineraries: Itinerary[];
   profileTabEnum = ProfileTab;
   selectedTab = ProfileTab.itineraries;
   user: User;
   emoji = Emoji;
+  isCreateModalOpen = false;
 
   constructor(
     private app: AppService,
     private userService: UserService,
-    private itineraryService: ItineraryService
-  ) { }
+    private itineraryService: ItineraryService,
+    private modalController: ModalController
+  ) {}
 
   async ngOnInit() {
     this.favItineraries = await this.itineraryService.search(null);
@@ -38,5 +42,26 @@ export class ProfilePage implements OnInit {
     this.selectedTab = event.detail.value;
   }
 
+  async showModal() {
+    const modal = await this.modalController.create({
+      component: CreateItineraryModalComponent,
+      breakpoints: [0.1, 0.3, 1],
+      initialBreakpoint: 0.3,
+      swipeToClose: true,
+    });
+    return await modal.present();
+  }
 
+  onClose() {
+    this.modalController.dismiss();
+  }
+
+  onContinue() {
+    console.log('test');
+    const { nativeElement } = this.createModal;
+    if (!nativeElement) {
+      return;
+    }
+    nativeElement.setCurrentBreakpoint(0.9);
+  }
 }
