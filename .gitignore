@@ -143,5 +143,5 @@ msbuild.wrn
 .vs/
 
 # DBeaver
-.dbeaver/
-.project
+db/.dbeaver/
+Db/.project
