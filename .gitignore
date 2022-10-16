@@ -141,3 +141,7 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
+
+# DBeaver
+.dbweaver/
+.project
