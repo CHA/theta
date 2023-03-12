@@ -1,12 +1,16 @@
 import { Controller, Get } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { Activity } from 'src/entities/activity';
+import { Itinerary } from 'src/entities/itinerary';
 import { ItinerariesService } from './itineraries.service';
 
 @Controller('itineraries')
 export class ItinerariesController {
-  constructor(private readonly itineraryService: ItinerariesService) {}
+  constructor(
+    private readonly itineraryService: ItinerariesService) { }
 
   @Get()
-  getItineraries(): string {
+  getItineraries(): Promise<Itinerary[]> {
     return this.itineraryService.getItineraries();
   }
 }
