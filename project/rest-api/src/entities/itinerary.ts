@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, PrimaryColumn, JoinColumn, JoinTable } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { Activity } from './activity';
 import { EntityBase } from './entity-base';
 
@@ -7,10 +7,10 @@ export class Itinerary extends EntityBase {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({length: 45})
+    @Column({ length: 45 })
     name: string;
 
-    @OneToMany(type => Activity, activity => activity.itinerary, { eager: true })
+    @OneToMany(() => Activity, activity => activity.itinerary, { eager: true })
     activities: Activity[];
 
 }

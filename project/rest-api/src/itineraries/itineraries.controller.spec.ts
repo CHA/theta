@@ -1,17 +1,22 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import { Test } from '@nestjs/testing';
 import { ItinerariesController } from './itineraries.controller';
 import { ItinerariesService } from './itineraries.service';
 
 describe('ItinerariesController', () => {
   let appController: ItinerariesController;
+  const mockItineraryService = {
+    getItineraries: () => 'Itineraries!'
+  };
 
   beforeEach(async () => {
-    const app: TestingModule = await Test.createTestingModule({
+    const moduleRef = await Test.createTestingModule({
       controllers: [ItinerariesController],
-      providers: [ItinerariesService],
+      providers: [
+        { provide: ItinerariesService, useValue: mockItineraryService }
+      ]
     }).compile();
 
-    appController = app.get<ItinerariesController>(ItinerariesController);
+    appController = moduleRef.get<ItinerariesController>(ItinerariesController);
   });
 
   describe('root', () => {

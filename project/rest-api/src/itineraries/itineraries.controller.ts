@@ -1,7 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { Activity } from 'src/entities/activity';
-import { Itinerary } from 'src/entities/itinerary';
+import { Itinerary } from '../entities/itinerary';
 import { ItinerariesService } from './itineraries.service';
 
 @Controller('itineraries')

@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Activity } from 'src/entities/activity';
-import { Itinerary } from 'src/entities/itinerary';
+import { Itinerary } from '../entities/itinerary';
 import { Repository } from 'typeorm';
 
 @Injectable()
