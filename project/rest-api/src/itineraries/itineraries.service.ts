@@ -11,6 +11,8 @@ export class ItinerariesService {
   ) { }
 
   getItineraries(): Promise<Itinerary[]> {
-    return this.itinerariesRepository.find();
+    return this.itinerariesRepository.find({
+      relations: ["activities", "activities.place"]
+    });
   }
 }
