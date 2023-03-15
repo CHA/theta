@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS activities;
 CREATE TABLE `activities` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `activity` VARCHAR(200) NOT NULL,
+    `place_id` INT,
     `day` INT NOT NULL,
     `itinerary_id` INT NULL,
     `start_time` TIME NULL,
