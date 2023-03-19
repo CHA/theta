@@ -4,14 +4,14 @@ import { EntityBase } from "./entity-base";
 @Entity('images')
 export class Image extends EntityBase {
     @PrimaryGeneratedColumn()
-    id: number;
+    id: Number;
 
     @Column({ length: 256 })
-    description: string;
+    description: String;
 
     @Column({ length: 3000 })
-    url: string;
+    url: String;
 
     @Column({ length: 50 })
-    tags: string;
+    tags: String;
 }

@@ -5,13 +5,16 @@ import { EntityBase } from './entity-base';
 @Entity('places')
 export class Place extends EntityBase {
     @PrimaryGeneratedColumn()
-    id: number;
+    id: Number;
 
     @Column({ length: 256 })
-    name: string;
+    name: String;
 
     @Column({ length: 256 })
-    tags: string;
+    tags: String;
+
+    @Column()
+    description: String;
 
     @OneToMany(() => Activity, activity => activity.place)
     activities: Activity[];

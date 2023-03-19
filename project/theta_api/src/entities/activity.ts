@@ -29,6 +29,18 @@ export class Activity extends EntityBase {
     @Column({ name: 'end_time' })
     endTime: Date;
 
+    @Column()
+    tags: String;
+
+    @Column()
+    price: Number;
+
+    @Column()
+    description: String;
+
+    @Column()
+    sequence: Number;
+
     @ManyToMany(() => Image, { eager: true })
     @JoinTable({
         name: 'activities_images',
