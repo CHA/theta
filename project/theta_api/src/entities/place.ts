@@ -1,21 +1,21 @@
-import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Activity } from './activity';
-import { EntityBase } from './entity-base';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
+import { Activity } from './activity'
+import { EntityBase } from './entity-base'
 
 @Entity('places')
 export class Place extends EntityBase {
-    @PrimaryGeneratedColumn()
-    id: Number;
+  @PrimaryGeneratedColumn()
+  id: Number
 
-    @Column({ length: 256 })
-    name: String;
+  @Column({ length: 256 })
+  name: String
 
-    @Column({ length: 256 })
-    tags: String;
+  @Column({ length: 256 })
+  tags: String
 
-    @Column()
-    description: String;
+  @Column()
+  description: String
 
-    @OneToMany(() => Activity, activity => activity.place)
-    activities: Activity[];
+  @OneToMany(() => Activity, (activity) => activity.place)
+  activities: Activity[]
 }

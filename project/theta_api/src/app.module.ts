@@ -1,13 +1,13 @@
-import { Module } from '@nestjs/common';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import configuration from './config/configuration';
-import { ItinerariesModule } from './itineraries/itineraries.module';
+import { Module } from '@nestjs/common'
+import { ConfigModule, ConfigService } from '@nestjs/config'
+import { TypeOrmModule } from '@nestjs/typeorm'
+import configuration from './config/configuration'
+import { ItinerariesModule } from './itineraries/itineraries.module'
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      load: [configuration]
+      load: [configuration],
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
@@ -19,13 +19,14 @@ import { ItinerariesModule } from './itineraries/itineraries.module';
         username: configService.get<MySqlConfig>('database.mysql').user,
         password: configService.get<MySqlConfig>('database.mysql').password,
         database: configService.get<MySqlConfig>('database.mysql').database,
-        synchronize: configService.get<MySqlConfig>('database.mysql').synchronize,
+        synchronize:
+          configService.get<MySqlConfig>('database.mysql').synchronize,
       }),
       inject: [ConfigService],
     }),
-    ItinerariesModule
+    ItinerariesModule,
   ],
   controllers: [],
   providers: [],
 })
-export class AppModule { }
+export class AppModule {}
