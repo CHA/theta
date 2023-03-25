@@ -44,4 +44,4 @@ VALUES
         'Eat',
         NULL,
         'Great lunch spot near Tower Bridge'
-    )
+    );

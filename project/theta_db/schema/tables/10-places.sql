@@ -1,6 +1,6 @@
 USE theta;
 
-DROP TABLE IF EXISTS places;
+DROP TABLE IF EXISTS places CASCADE;
 
 CREATE TABLE `places` (
     `id` INT NOT NULL AUTO_INCREMENT,
@@ -14,4 +14,4 @@ CREATE TABLE `places` (
     `last_modified_by` VARCHAR(45) DEFAULT NULL,
     `is_deleted` bit(1) DEFAULT 0,
     PRIMARY KEY (id)
-)
+);

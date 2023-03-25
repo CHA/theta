@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ItineraryService } from './itinerary.service';
+import { Itinerary } from './models/itinerary';
 
 @Component({
   selector: 'app-itinerary',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItineraryComponent implements OnInit {
 
-  constructor() { }
+  itinerary: Itinerary | null = null;
+
+  constructor(private itineraryService: ItineraryService) { }
 
   ngOnInit(): void {
+    this.itineraryService.getItineraries().subscribe(data => this.itinerary = data[0]);
   }
 
 }

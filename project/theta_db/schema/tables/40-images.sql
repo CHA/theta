@@ -1,6 +1,6 @@
 USE theta;
 
-DROP TABLE IF EXISTS images;
+DROP TABLE IF EXISTS images CASCADE;
 
 CREATE TABLE images (
     `id` INT NOT NULL AUTO_INCREMENT,
@@ -13,4 +13,4 @@ CREATE TABLE images (
     `last_modified_by` varchar(45) DEFAULT NULL,
     `is_deleted` bit(1) DEFAULT 0,
     PRIMARY KEY (id)
-)
+);

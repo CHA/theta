@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Itinerary } from '../entities/itinerary'
-import { Repository } from 'typeorm'
+import { Equal, Repository } from 'typeorm'
 
 @Injectable()
 export class ItinerariesService {
@@ -19,5 +19,9 @@ export class ItinerariesService {
         },
       },
     })
+  }
+
+  getItinerary(id: number): Promise<Itinerary> {
+    return this.itinerariesRepository.findOneBy({ id: Equal(id) })
   }
 }

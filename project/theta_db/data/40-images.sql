@@ -32,4 +32,4 @@ VALUES
     (
         'Five Guys Tower Bridge',
         'https://images.squarespace-cdn.com/content/v1/58d15ded6a49638c26e0888c/1592306076768-CLKU8ERKTGTIRG52LYQT/EaoPExvXYAUvZ2K.jpg'
-    )
+    );

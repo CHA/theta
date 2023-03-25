@@ -9,4 +9,4 @@ ALTER TABLE
 INSERT INTO
     itineraries (name, start_date, end_date)
 VALUES
-    ('A week in London', '2023-04-08', '2023-04-08')
+    ('A week in London', '2023-04-08', '2023-04-08');

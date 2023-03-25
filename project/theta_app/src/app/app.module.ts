@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AppShellComponent } from './app-shell/app-shell.component';
 import { FeatureModule } from './feature/feature.module';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { SharedModule } from './shared/shared.module';
     FeatureModule,
     BrowserAnimationsModule,
     RouterModule,
+    HttpClientModule,
     SharedModule
   ],
   providers: [],

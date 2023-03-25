@@ -2,11 +2,19 @@ import { NestFactory } from '@nestjs/core'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 import { AppModule } from './app.module'
 
+const globalPrefix: string = 'api'
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
-
+  app.setGlobalPrefix(globalPrefix)
   app.enableCors()
 
+  configureSwagger(app)
+
+  await app.listen(3000)
+}
+
+function configureSwagger(app) {
   // Configure Swagger
   const config = new DocumentBuilder()
     .setTitle('Theta Itinerary API')
@@ -15,9 +23,8 @@ async function bootstrap() {
     .addTag('itinerary')
     .build()
   const document = SwaggerModule.createDocument(app, config)
-  SwaggerModule.setup('api', app, document)
 
-  await app.listen(3000)
+  SwaggerModule.setup('api', app, document)
 }
 
 bootstrap()

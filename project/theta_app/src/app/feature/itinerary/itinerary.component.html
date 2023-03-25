@@ -1,5 +1,7 @@
-<div class="content">
-    <div *ngFor="let num of [1, 2, 3, 4, 5, 6, 7]">
-        <app-itinerary-card></app-itinerary-card>
+<div *ngIf="itinerary">
+  <div class="content">
+    <div *ngFor="let activity of itinerary.activities">
+      <app-activity-card [activity]="activity"></app-activity-card>
     </div>
+  </div>
 </div>

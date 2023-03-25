@@ -1,6 +1,6 @@
 USE theta;
 
-DROP TABLE IF EXISTS activities;
+DROP TABLE IF EXISTS activities CASCADE;
 
 CREATE TABLE `activities` (
     `id` INT NOT NULL AUTO_INCREMENT,
@@ -21,4 +21,4 @@ CREATE TABLE `activities` (
     `is_deleted` bit(1) DEFAULT 0,
     FOREIGN KEY (itinerary_id) REFERENCES itineraries(id) ON DELETE CASCADE,
     PRIMARY KEY (id)
-)
+);
