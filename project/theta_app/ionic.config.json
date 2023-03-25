@@ -1,0 +1,7 @@
+{
+  "name": "Theta",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

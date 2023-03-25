@@ -1,31 +1,24 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
+import { RouteReuseStrategy } from '@angular/router';
+
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppShellComponent } from './app-shell/app-shell.component';
-import { FeatureModule } from './feature/feature.module';
-import { SharedModule } from './shared/shared.module';
-import { HttpClientModule } from '@angular/common/http';
-
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AppShellComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule,
+    IonicModule.forRoot({
+      mode: 'md',
+    }),
     AppRoutingModule,
-    FeatureModule,
-    BrowserAnimationsModule,
-    RouterModule,
     HttpClientModule,
-    SharedModule
   ],
-  providers: [],
-  schemas: [],
-  bootstrap: [AppComponent]
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

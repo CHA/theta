@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  thetaApiUrl: 'http://localhost:3000/api',
+  thetaApiBaseEndpoint: 'http://localhost:3000/api',
 };
 
 /*
