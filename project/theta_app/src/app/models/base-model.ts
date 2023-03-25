@@ -1,7 +1,7 @@
 export interface BaseModel {
   createdDate: Date;
   createdBy: string;
-  lastModifiedByDate: Date;
+  lastModifiedDate: Date;
   lastModifiedBy: string;
   isDeleted: boolean;
 }

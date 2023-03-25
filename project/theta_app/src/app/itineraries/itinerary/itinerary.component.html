@@ -1,0 +1,40 @@
+<div *ngIf="itinerary">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title> {{ itinerary.name }} </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large"> My Itineraries</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-card *ngFor="let day of days">
+      <ion-card-header>
+        <ion-card-title>Day {{ day }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let item of activitiesByDay(day)">
+            <ion-thumbnail slot="start">
+              <img
+                [alt]="item.images[0].description"
+                [src]="item.images[0].url"
+              />
+            </ion-thumbnail>
+            <ion-label>
+              {{ item.place.name }}
+              <p>{{ item.activity }}</p>
+            </ion-label>
+            <ion-button fill="clear">
+              <ion-icon name="navigate-outline"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</div>

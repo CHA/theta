@@ -1,4 +1,4 @@
-import { BaseModel } from '../../models/base-model';
+import { BaseModel } from './base-model';
 
 export interface Image extends BaseModel {
   id: number;

@@ -25,6 +25,13 @@ const routes: Routes = [
           import('../about/about.module').then((m) => m.AboutPageModule),
       },
       {
+        path: 'itineraries',
+        loadChildren: () =>
+          import('../itineraries/itineraries.module').then(
+            (m) => m.ItinerariesModule
+          ),
+      },
+      {
         path: '',
         redirectTo: '/tabs/about',
         pathMatch: 'full',

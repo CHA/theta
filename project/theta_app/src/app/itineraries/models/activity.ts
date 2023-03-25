@@ -1,6 +1,6 @@
 import { BaseModel } from 'src/app/models/base-model';
 import { Place } from './place';
-import { Image } from './image';
+import { Image } from '../../models/image';
 
 export interface Activity extends BaseModel {
   id: number;
