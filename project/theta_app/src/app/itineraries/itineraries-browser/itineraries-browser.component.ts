@@ -9,6 +9,8 @@ import { Itinerary } from '../models/itinerary';
 })
 export class ItinerariesBrowserComponent implements OnInit {
   itineraries: Itinerary[] = [];
+  mainImageUrl: string = '';
+
   constructor(private readonly itinerariesService: ItinerariesService) {}
 
   ngOnInit() {
