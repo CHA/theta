@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NoImage } from 'src/app/models/no-image';
+import { GoogleMapService } from 'src/app/services/google-map.service';
 import { ItinerariesService } from '../itineraries-service.service';
 import { Itinerary } from '../models/itinerary';
 @Component({
@@ -14,7 +15,8 @@ export class ItineraryComponent implements OnInit {
 
   constructor(
     private itineraryService: ItinerariesService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private googleMapService: GoogleMapService
   ) {}
 
   ngOnInit() {
@@ -26,6 +28,10 @@ export class ItineraryComponent implements OnInit {
 
   activitiesByDay(day: number) {
     return this.itinerary?.activities.filter((i) => i.day == day);
+  }
+
+  getDirection(destination: string) {
+    this.googleMapService.getDirection(destination);
   }
 
   private prepareViewmodel(itinerary: Itinerary) {

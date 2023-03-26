@@ -22,6 +22,11 @@ export class ItinerariesService {
   }
 
   getItinerary(id: number): Promise<Itinerary> {
-    return this.itinerariesRepository.findOneBy({ id: Equal(id) })
+    return this.itinerariesRepository.findOne({
+      relations: ['activities', 'activities.place'],
+      where: {
+        id: Equal(id),
+      },
+    })
   }
 }
