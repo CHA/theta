@@ -4,9 +4,9 @@ http:
 
 database:
   mysql:
-    host: 'localhost'
+    host: 'theta-db.c9jaiicvcvbn.us-east-1.rds.amazonaws.com'
     port: 3306
-    user: 'root'
+    user: 'admin'
     password: 'Clapham101_'
     database: 'theta'
     synchronize: false
